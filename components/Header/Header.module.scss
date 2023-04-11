@@ -1,6 +1,7 @@
 ﻿.header {
   width: 100%;
   position: fixed;
+  z-index: 5;
   .header_nav {
     max-width: 1940px;
     width: 100%;
@@ -11,7 +12,6 @@
     padding: 0 60px;
     box-sizing: border-box;
     margin: auto;
-    background-color: black;
     ul {
       display: flex;
       list-style: none;
@@ -29,11 +29,19 @@
     }
     // left_ul
 
-    .logo_text {
+    .logo_title {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 22.43px;
+      cursor: pointer;
+      .title  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10.65px;
+
+      }
     }
     // logo_text
 
@@ -51,6 +59,7 @@
         font-size: 16px;
         line-height: 90px;
         color: #ffffff;
+        cursor: pointer;
       }
     }
     // right_ul
