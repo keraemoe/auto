@@ -10,6 +10,7 @@ const Hero = () => {
             <h1>Dubai</h1>
             <p>luxury car rental</p>
           </div>
+          {/* hero_title */}
         <div className={s.hero_social_network}>
         <div className={s.telegram}>
             <svg
@@ -42,9 +43,13 @@ const Hero = () => {
             </svg>
           </div>
         </div>
+        {/* hero_social_network */}
         </div>
+        {/* hero_gradient */}
       </div>
+      {/* hero_background */}
     </section>
+    // hero
   );
 };
 

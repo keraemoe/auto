@@ -1,7 +1,38 @@
-﻿import React from "react";
+﻿import React, { useState } from "react";
 import s from "./Header.module.scss";
 
+import CustomSelect from "../CustomSelect/CustomSelect";
+
+const optionsCity = [
+  { value: "one", label: "Dubai" },
+  { value: "two", label: "Moscow" },
+  { value: "three", label: "Budapest" },
+  { value: "four", label: "Wiesbaden" },
+];
+
+const optionsLanguage = [
+  { value: "one", label: "ENG" },
+  { value: "two", label: "RUS" },
+  { value: "three", label: "KGZ" },
+  { value: "four", label: "XZ" },
+];
+
 const Header = () => {
+  const [optionsCityState, setOptionsCityState] = useState(optionsCity[0].label);
+  const [cityOpen, setCityOpen] = useState(false);
+  
+  const handleOptionClickCity = (value) => {
+    setCityOpen(!cityOpen);
+    setOptionsCityState(value);
+  };
+  
+  const [optionsLanguageState, setOptionsLanguageState] = useState(optionsLanguage[0].label);
+  const [languageOpen, setLanguageOpen] = useState(false);
+
+  const handleOptionClickLanguage = (value) => {
+    setLanguageOpen(!languageOpen);
+    setOptionsLanguageState(value);
+  };
   return (
     <header className={s.header}>
       <nav className={s.header_nav}>
@@ -16,10 +47,11 @@ const Header = () => {
             <a href="#">Contacts</a>
           </li>
         </ul>
+        {/* left_ul */}
+
         <div className={s.logo_title}>
           <svg
-            width="71"
-            height="67"
+            className={s.logo}
             viewBox="0 0 71 67"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,10 +94,8 @@ const Header = () => {
             />
           </svg>
 
-          <div className={s.title}>
           <svg
-            width="147"
-            height="29"
+            className={s.title_first}
             viewBox="0 0 147 29"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,8 +109,7 @@ const Header = () => {
           </svg>
 
           <svg
-            width="128"
-            height="9"
+            className={s.title_second}
             viewBox="0 0 128 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -90,27 +119,28 @@ const Header = () => {
               fill="#FEFEFE"
             />
           </svg>
-          </div>
         </div>
-        {/* logo_text */}
+        {/* logo_title */}
 
         <ul className={s.right_ul}>
-          <li>
-            <a href="#">+971 58 590 7875</a>
-          </li>
+          <li>+971 58 590 7875</li>
 
-          <select>
-            <option>Dubai</option>
-            <option>test1</option>
-            <option>test2</option>
-          </select>
-
-          <select>
-            <option>ENG</option>
-            <option>RUS</option>
-            <option>KGZ</option>
-          </select>
+          <CustomSelect
+            options={optionsCity}
+            isOpen={cityOpen}
+            setIsOpen={setCityOpen}
+            onClick={handleOptionClickCity}
+            selectedOption={optionsCityState}
+          />
+          <CustomSelect
+            options={optionsLanguage}
+            isOpen={languageOpen}
+            setIsOpen={setLanguageOpen}
+            onClick={handleOptionClickLanguage}
+            selectedOption={optionsLanguageState}
+          />
         </ul>
+        {/* right_ul */}
       </nav>
       {/* nav */}
     </header>
