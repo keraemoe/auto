@@ -1,1 +1,133 @@
-﻿
+﻿.header {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  .header_nav {
+    max-width: 1940px;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    box-sizing: border-box;
+    margin: auto;
+    .left_ul,
+    .right_ul {
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+    .left_ul {
+       li {
+        a {
+          text-decoration: none;
+          color: #ffffff;
+
+          &:hover{
+            transition: 0.3s;
+            color: #33b7bc;
+          }
+        }
+      }
+    }
+    // left_ul
+
+    .logo_title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      .logo {
+        height: 67px;
+      }
+
+      .title_first {
+        height: 29px;
+        margin-top: 22px;
+      }
+
+      .title_second {
+        height: 9px;
+        margin-top: 15px;
+      }
+    }
+    // logo_title
+
+    .right_ul {
+      li{
+        color: #ffffff;
+      }
+      select {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-family: "Stolzl", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 90px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+    // right_ul
+  }
+  // nav
+}
+// header
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .header_nav {
+      height: 120px;
+      padding: 0 30px;
+      .left_ul,
+      .right_ul {
+        li {
+          a {
+            font-size: 10px;
+          }
+        }
+      }
+      .left_ul {
+        max-width: 280px;
+      }
+      // left_ul
+
+      .logo_title {
+        // margin-top: 20px;
+        .logo {
+          height: 50px;
+        }
+
+        .title_first {
+          height: 20px;
+          margin-top: 17px;
+        }
+
+        .title_second {
+          height: 7px;
+          margin-top: 10px;
+        }
+      }
+      // logo_title
+
+      .right_ul {
+        max-width: 280px;
+        select {
+          font-size: 13px;
+          line-height: 90px;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+      // right_ul
+    }
+    // nav
+  }
+  // header
+}
