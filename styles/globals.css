@@ -1,3 +1,5 @@
+
+
 * {
   padding: 0;
   margin: 0;
@@ -18,6 +20,17 @@ html {
   scroll-behavior: smooth;
 }
 
-h1 , h2 , h3 ,h4 , h5 ,h6 , a , p , span , li , ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+li,
+ul,
+button {
   font-family: "Stolzl";
 }
