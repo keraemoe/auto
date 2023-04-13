@@ -1,4 +1,5 @@
 .hero {
+  width: 100;
   width: 100%;
   height: 100vh;
   margin: auto;
@@ -52,6 +53,9 @@
           background: #34aadf;
           border-radius: 50%;
           cursor: pointer;
+          svg{
+            height: 28px;
+          }
         }
 
         .whatsapp {
@@ -63,6 +67,9 @@
           background: #43d854;
           border-radius: 50%;
           cursor: pointer;
+          svg{
+            height: 26px;
+          }
         }
       }
       // hero_social_network
@@ -87,14 +94,6 @@
           }
         }
         // hero_title
-        .hero_social_network {
-          .telegram {
-          }
-
-          .whatsapp {
-          }
-        }
-        // hero_social_network
       }
       // hero_gradient
     }
@@ -116,22 +115,29 @@
             font-size: 16px;
           }
         }
-        // hero_title
-        .hero_social_network {
-          gap: 15px;
-          right: 40px;
-          bottom: 40px;
-          .telegram {
-            width: 45px;
-            height: 45px;
-          }
+        // hero_social_network
+      }
+      // hero_gradient
+    }
+    // hero_background
+  }
+  // hero
+}
 
-          .whatsapp {
-            width: 45px;
-            height: 45px;
+@media screen and (max-width: 768px) {
+  .hero {
+    .hero_background {
+      .hero_gradient {
+        .hero_title {
+          line-height: 50px;
+          h1 {
+            font-size: 60px;
+          }
+          p {
+            font-size: 16px;
           }
         }
-        // hero_social_network
+        // hero_title
       }
       // hero_gradient
     }
