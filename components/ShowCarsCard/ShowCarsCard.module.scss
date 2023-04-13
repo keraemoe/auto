@@ -80,13 +80,12 @@
   }
 }
 
-
-
 @media screen and (max-width: 1664px) {
   .car_card {
     width: 49.6%;
   }
 }
+
 
 @media screen and (max-width: 1247px) {
   .car_card {
@@ -94,19 +93,18 @@
   }
 }
 
-
 @media screen and (max-width: 1128px) {
   .car_card {
     width: 100% !important;
     .car_card_footer {
-      padding: 0 30px 0 30px ;
+      padding: 0 30px 0 30px;
     }
   }
 }
 
 @media screen and (max-width: 1116px) {
   .car_card_footer {
-    padding: 0 5px 0 ;
+    padding: 0 5px 0;
     margin-bottom: 30px !important;
   }
 }
@@ -120,7 +118,7 @@
 @media screen and (max-width: 620px) {
   .car_card_footer {
     h3 {
-      font-size: 30px ;
+      font-size: 30px;
     }
   }
 }
@@ -134,7 +132,7 @@
   }
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 570px) {
   .car_card_footer {
     margin-bottom: 2px !important;
     h3 {
@@ -149,8 +147,8 @@
 }
 
 @media screen and (max-width: 500px) {
-  .car_card_footer{
-    padding: 0 2px 0 2px ;
+  .car_card_footer {
+    padding: 0 2px 0 2px;
   }
 }
 
@@ -161,20 +159,20 @@
 }
 
 @media screen and (max-width: 400px) {
-  .car_card_footer{
-    h3{
+  .car_card_footer {
+    h3 {
       font-size: 20px !important;
     }
   }
 }
 
-@media  (min-width: 0px) and (max-width: 380px) {
-  .car_card_footer{
+@media (min-width: 0px) and (max-width: 380px) {
+  .car_card_footer {
     padding: 0 10px 0 10px !important;
-    h3{
+    h3 {
       font-size: 16px !important;
     }
-    button{
+    button {
       font-size: 13px !important;
       width: 79px !important;
       height: 38px !important;

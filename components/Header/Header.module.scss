@@ -1,1 +1,159 @@
-﻿
+﻿.header {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+
+  .header_nav {
+    max-width: 1940px;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    box-sizing: border-box;
+    margin: auto;
+
+    .left_ul,
+    .right_ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .left_ul {
+      li {
+        a {
+          text-decoration: none;
+          font-family: "Stolzl", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 90px;
+          color: #d7d7d7;
+
+          &:hover {
+            transition: 0.3s;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    // left_ul
+
+    .right_ul {
+      .right_ul_number {
+        font-family: "Stolzl", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 90px;
+        color: #ffffff;
+      }
+    }
+    // right_ul
+  }
+  // nav
+}
+// header
+
+@media screen and (max-width: 1250px) {
+  .header {
+    .header_nav {
+      height: 180px;
+      padding: 0 40px;
+
+      .left_ul,
+      .right_ul {
+        gap: 30px;
+      }
+
+      .left_ul {
+        li {
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+      // left_ul
+
+      .right_ul {
+        .right_ul_number {
+          font-size: 14px;
+        }
+      }
+      // right_ul
+    }
+    // nav
+  }
+  // header
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .header_nav {
+      height: 150px;
+      padding: 0 30px;
+
+      .left_ul,
+      .right_ul {
+        gap: 20px;
+      }
+
+      .left_ul {
+        li {
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+      // left_ul
+
+      .right_ul {
+        .right_ul_number {
+          font-size: 12px;
+        }
+      }
+      // right_ul
+    }
+    // nav
+  }
+  // header
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .header_nav {
+      height: 100px;
+      padding: 0 50px;
+
+      .left_ul {
+        li {
+          display: none;
+        }
+      }
+      // left_ul
+
+      .right_ul {
+        .right_ul_number {
+          display: none;
+        }
+      }
+      // right_ul
+    }
+    // nav
+  }
+  // header
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    .header_nav {
+      height: 80px;
+      padding: 0 20px;
+    }
+    // nav
+  }
+  // header
+}

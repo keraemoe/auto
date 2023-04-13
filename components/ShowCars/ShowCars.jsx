@@ -17,6 +17,7 @@ const ShowCars = () => {
 			title: 'Lamborghini Urus',
 			date: 2018,
 			rented: 200,
+			daily: 1234,
 			id: 1,
 		},
 		{
@@ -24,6 +25,7 @@ const ShowCars = () => {
 			title: 'Ferrari Roma',
 			date: 2021,
 			rented: 500,
+			daily: 144,
 			id: 2,
 		},
 		{
@@ -31,6 +33,7 @@ const ShowCars = () => {
 			title: 'Rolls-Royce Ghost',
 			date: 2010,
 			rented: 400,
+			daily: 1104,
 			id: 3,
 		},
 		{
@@ -38,14 +41,14 @@ const ShowCars = () => {
 			title: 'Porsche 911 Turbo S',
 			date: 2013,
 			rented: 700,
+			daily: 541,
 			id: 4,
 		},
 	]);
 
 
-	useEffect(() => {
 
-	}, [cars])
+
 
 	function filterCarsByDate() {
 		const sortedCars = cars.sort((a, b) => b.date - a.date);
@@ -62,6 +65,11 @@ const ShowCars = () => {
 		setCars([...sortedCars])
 	}
 
+	function sortByDaily() {
+		const sortedCars = cars.sort((a, b) => a.daily - b.daily)
+		setCars([...sortedCars])
+	}
+
 
 	const handleFilterClick = (filter) => {
 		setSelectedFilter(filter);
@@ -70,34 +78,42 @@ const ShowCars = () => {
 
 
 	return (
-		<section className={s.showcars_section}>
-			<div className={s.cars_filter}>
-				<p className={classNames(s.cars_filter_title, {
-					[s.cars_filter_title_active]: selectedFilter === 'special',
-				})}
-					onClick={() => handleFilterClick('special') || sortByOffer()}>
-					Special Offer</p>
-				<p className={classNames(s.cars_filter_title, {
-					[s.cars_filter_title_active]: selectedFilter === 'new',
-				})}
-					onClick={() => handleFilterClick('new') || filterCarsByDate()}>New car</p>
-				<p className={classNames(s.cars_filter_title, {
-					[s.cars_filter_title_active]: selectedFilter === 'popular',
-				})}
-					onClick={() => handleFilterClick('popular') || sortByRented()}>
-					Most popular</p>
-				<p className={classNames(s.cars_filter_title, {
-					[s.cars_filter_title_active]: selectedFilter === 'daily',
-				})}
-					onClick={() => handleFilterClick('daily')}>
-					Daily</p>
-			</div>
-			<div className={s.cars_catalog}>
-				{cars.map((car => {
-					return <ShowCarsCard key={car.id} img={car.img} title={car.title} />
-				}))}
-			</div>
-		</section>
+		<div style={{width: '100%' , background: '#161516'}}>
+			<section className={s.showcars_section}>
+				<div className={s.cars_filter}>
+					<p className={classNames(s.cars_filter_title, {
+						[s.cars_filter_title_active]: selectedFilter === 'special',
+					})}
+						onClick={() => handleFilterClick('special') || sortByOffer()}>
+						Special Offer</p>
+					<p className={classNames(s.cars_filter_title, {
+						[s.cars_filter_title_active]: selectedFilter === 'new',
+					})}
+						onClick={() => handleFilterClick('new') || filterCarsByDate()}>New car</p>
+					<p className={classNames(s.cars_filter_title, {
+						[s.cars_filter_title_active]: selectedFilter === 'popular',
+					})}
+						onClick={() => handleFilterClick('popular') || sortByRented()}>
+						Most popular</p>
+					<p className={classNames(s.cars_filter_title, {
+						[s.cars_filter_title_active]: selectedFilter === 'daily',
+					})}
+						onClick={() => handleFilterClick('daily') || sortByDaily()}>
+						Daily</p>
+				</div>
+				<div className={s.cars_catalog}>
+					{cars.map((car => {
+						return <ShowCarsCard key={car.id} img={car.img} title={car.title} />
+					}))}
+				</div>
+				<div className={s.cars_catalog_btn}>
+					<button>
+						View all
+					</button>
+				</div>
+			</section>
+		</div> 
+
 	);
 };
 
