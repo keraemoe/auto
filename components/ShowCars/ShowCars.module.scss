@@ -10,14 +10,13 @@
     /* height: 81px; */
     display: flex;
     justify-content: space-between;
-    overflow-x: auto;
     margin: 0 auto;
     white-space: nowrap;
     .cars_filter_title {
       font-style: normal;
       font-weight: 500;
       font-size: 40px;
-      // line-height: 130px; 
+      // line-height: 130px;
       transition: 0.4s;
       /* or 325% */
       cursor: pointer;
@@ -28,14 +27,25 @@
       font-style: normal;
       font-weight: 500;
       font-size: 40px;
-      // line-height: 10px; 
+      // line-height: 10px;
       /* or 325% */
-
       cursor: pointer;
-      border-bottom: 8px solid skyblue;
-      
-
       color: #f2f2f2;
+      position: relative;
+    }
+    .cars_filter_title_active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 8px;
+      background-color: skyblue;
+    }
+    .cars_filter_title_active::after {
+      bottom: 0;
+      right: 0;
+      -webkit-transform: skew(-55deg);
+      -moz-transform: skew(-55deg);
+      -o-transform: skew(-55deg);
     }
   }
   .cars_catalog {
@@ -93,4 +103,3 @@
     }
   }
 }
-
