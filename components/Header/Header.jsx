@@ -4,6 +4,7 @@ import s from "./Header.module.scss";
 import CustomSelect from "../CustomSelect/CustomSelect";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Logo from "../Logo/Logo";
+import NavBurgerMenu from "../NavBurgerMenu/NavBurgerMenu";
 
 const optionsCity = [
   { id: 1, value: "one", label: "Dubai" },
@@ -45,18 +46,23 @@ const Header = () => {
     setOptionsLanguageState(value);
   };
 
+  // Состояние - навигационного бургер меню
+  const [nav, setNav] = useState(false);
+
   return (
     <header className={s.header}>
       <nav className={s.header_nav}>
         <ul className={s.left_ul}>
-          <BurgerMenu />
-          <li>
+          <BurgerMenu setNav={setNav} nav={nav}/>
+          <NavBurgerMenu nav={nav}/>
+
+          <li className={s.left_ul_li}>
             <a href="#">Car List</a>
           </li>
-          <li>
+          <li className={s.left_ul_li}>
             <a href="#">About Us</a>
           </li>
-          <li>
+          <li className={s.left_ul_li}>
             <a href="#">Contacts</a>
           </li>
         </ul>

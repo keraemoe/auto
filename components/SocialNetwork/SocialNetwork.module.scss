@@ -1,9 +1,6 @@
 .hero_social_network {
   display: flex;
   gap: 20px;
-  position: absolute;
-  right: 60px;
-  bottom: 60px;
   .telegram {
     width: 54px;
     height: 54px;
@@ -37,8 +34,7 @@
 @media screen and (max-width: 1440px) {
   .hero_social_network {
     gap: 15px;
-    right: 40px;
-    bottom: 40px;
+   
     .telegram {
       width: 44px;
       height: 44px;
@@ -62,8 +58,7 @@
   // hero_title
   .hero_social_network {
     gap: 15px;
-    right: 40px;
-    bottom: 40px;
+
     .telegram {
       width: 44px;
       height: 44px;
@@ -85,8 +80,7 @@
 @media screen and (max-width: 768px) {
   .hero_social_network {
     gap: 15px;
-    right: 20px;
-    bottom: 20px;
+    
     .telegram {
       width: 40px;
       height: 40px;
