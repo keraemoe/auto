@@ -1,9 +1,10 @@
 import React from 'react';
 import s from "./SocialNetwork.module.scss";
+import cn from "classnames"
 
-const SocialNetwork = () => {
+const SocialNetwork = ({className}) => {
     return (
-        <div className={s.hero_social_network}>
+        <div className={cn(s.hero_social_network, className)}>
         <div className={s.telegram}>
             <svg
               viewBox="0 0 28 28"

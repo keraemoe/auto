@@ -13,7 +13,7 @@ const Hero = () => {
             <p>luxury car rental</p>
           </div>
           {/* hero_title */}
-          <SocialNetwork />
+          <SocialNetwork className={s.hero_social_network} />
         </div>
         {/* hero_gradient */}
       </div>

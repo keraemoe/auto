@@ -1,6 +1,8 @@
 ﻿.header {
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 5;
 
   .header_nav {
@@ -10,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
+    padding: 0 60px 0 181px;
     box-sizing: border-box;
     margin: auto;
 
@@ -23,7 +25,7 @@
     }
 
     .left_ul {
-      li {
+      .left_ul_li {
         a {
           text-decoration: none;
           font-family: "Stolzl", sans-serif;
@@ -62,7 +64,7 @@
   .header {
     .header_nav {
       height: 180px;
-      padding: 0 40px;
+      padding: 0 40px 0 161px;
 
       .left_ul,
       .right_ul {
@@ -70,7 +72,7 @@
       }
 
       .left_ul {
-        li {
+        .left_ul_li {
           a {
             font-size: 14px;
           }
@@ -94,7 +96,7 @@
   .header {
     .header_nav {
       height: 150px;
-      padding: 0 30px;
+      padding: 0 30px 0 141px;
 
       .left_ul,
       .right_ul {
@@ -102,7 +104,7 @@
       }
 
       .left_ul {
-        li {
+        .left_ul_li {
           a {
             font-size: 12px;
           }
@@ -126,10 +128,10 @@
   .header {
     .header_nav {
       height: 100px;
-      padding: 0 50px;
+      padding: 0 50px 0 151px;
 
       .left_ul {
-        li {
+        .left_ul_li {
           display: none;
         }
       }
@@ -151,7 +153,8 @@
   .header {
     .header_nav {
       height: 80px;
-      padding: 0 20px;
+      padding: 0 20px 0 121px;
+
     }
     // nav
   }
