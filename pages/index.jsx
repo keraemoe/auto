@@ -1,3 +1,4 @@
+import AboutUs from '@/components/AboutUs/AboutUs'
 import Hero from '@/components/Hero/Hero'
 import Head from 'next/head'
 
@@ -12,6 +13,7 @@ export default function Home() {
         <script src="https://kit.fontawesome.com/1f5bacc93d.js" crossorigin="anonymous"></script>
       </Head>
       <Hero/>
+      <AboutUs/>
     </>
   )
 }

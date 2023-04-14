@@ -1,0 +1,19 @@
+.aboutus_section{
+	position: relative;
+	max-width: 1920px;
+	width: 100%;
+	height: 1000px;
+	margin: 0 auto;
+	border: 1px solid black;
+	background: #161516;
+	
+	
+	img{
+		width: 866px;
+		height: 810px;
+		position: absolute;
+		right: 0;
+		object-fit: fill;
+	}
+
+}

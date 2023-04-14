@@ -50,48 +50,50 @@ const Header = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <header className={s.header}>
-      <nav className={s.header_nav}>
-        <ul className={s.left_ul}>
-          <BurgerMenu setNav={setNav} nav={nav}/>
-          <NavBurgerMenu nav={nav}/>
+    <>
+    </>
+    // <header className={s.header}>
+    //   <nav className={s.header_nav}>
+    //     <ul className={s.left_ul}>
+    //       <BurgerMenu setNav={setNav} nav={nav}/>
+    //       <NavBurgerMenu nav={nav}/>
 
-          <li className={s.left_ul_li}>
-            <a href="#">Car List</a>
-          </li>
-          <li className={s.left_ul_li}>
-            <a href="#">About Us</a>
-          </li>
-          <li className={s.left_ul_li}>
-            <a href="#">Contacts</a>
-          </li>
-        </ul>
-        {/* left_ul */}
+    //       <li className={s.left_ul_li}>
+    //         <a href="#">Car List</a>
+    //       </li>
+    //       <li className={s.left_ul_li}>
+    //         <a href="#">About Us</a>
+    //       </li>
+    //       <li className={s.left_ul_li}>
+    //         <a href="#">Contacts</a>
+    //       </li>
+    //     </ul>
+    //     {/* left_ul */}
 
-        <Logo />
+    //     <Logo />
 
-        <ul className={s.right_ul}>
-          <li className={s.right_ul_number}>+971 58 590 7875</li>
+    //     <ul className={s.right_ul}>
+    //       <li className={s.right_ul_number}>+971 58 590 7875</li>
 
-          <CustomSelect
-            options={optionsCity}
-            isOpen={cityOpen}
-            setIsOpen={setCityOpen}
-            onClick={handleOptionClickCity}
-            selectedOption={optionsCityState}
-          />
-          <CustomSelect
-            options={optionsLanguage}
-            isOpen={languageOpen}
-            setIsOpen={setLanguageOpen}
-            onClick={handleOptionClickLanguage}
-            selectedOption={optionsLanguageState}
-          />
-        </ul>
-        {/* right_ul */}
-      </nav>
-      {/* nav */}
-    </header>
+    //       <CustomSelect
+    //         options={optionsCity}
+    //         isOpen={cityOpen}
+    //         setIsOpen={setCityOpen}
+    //         onClick={handleOptionClickCity}
+    //         selectedOption={optionsCityState}
+    //       />
+    //       <CustomSelect
+    //         options={optionsLanguage}
+    //         isOpen={languageOpen}
+    //         setIsOpen={setLanguageOpen}
+    //         onClick={handleOptionClickLanguage}
+    //         selectedOption={optionsLanguageState}
+    //       />
+    //     </ul>
+    //     {/* right_ul */}
+    //   </nav>
+    //   {/* nav */}
+    // </header>
     // header
   );
 };
