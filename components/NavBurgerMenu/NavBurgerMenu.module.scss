@@ -11,6 +11,7 @@
 
   .menu_gradient {
     position: relative;
+    z-index: 1;
     height: 100%;
     background: linear-gradient(
       180deg,
@@ -20,21 +21,28 @@
     opacity: 0;
     transition: all 0.5s;
 
-    .menu_header{
-      .menu_custom_select{
-        display: none;
+    .menu_header {
+      position: relative;
+      padding: 30px 0;
+      margin: 0 auto;
+      .menu_custom_select {
+        position: absolute;
+        right: 60px;
+        bottom: 50%;
+        display: flex;
       }
     }
 
     .menu_nav {
       display: flex;
       gap: 200px;
-      padding: 180px 0 0 150px;
+      padding: 0 150px;
 
       ul {
         li {
           list-style: none;
           a {
+            position: relative;
             text-decoration: none;
             font-family: "Stolzl", sans-serif;
             font-style: normal;
@@ -42,6 +50,25 @@
             font-size: 54px;
             line-height: 130px;
             color: #76828c;
+            &:hover,
+            &:focus {
+              color: #ffffff;
+            }
+
+            &:hover::after,
+            &:focus::after {
+              content: "";
+              width: 100%;
+              height: 14px;
+              position: absolute;
+              z-index: -1;
+              bottom: 1px;
+              right: 0;
+              background: #33b7bc;
+              -webkit-transform: skew(-55deg);
+              -moz-transform: skew(-55deg);
+              -o-transform: skew(-55deg);
+            }
           }
         }
       }
@@ -50,7 +77,6 @@
 
     .menu_footer {
       width: 100%;
-      height: 154px;
       position: fixed;
       left: 0;
       bottom: 0;
@@ -60,7 +86,7 @@
       border: 1px solid #272727;
       font-family: "Stolzl", sans-serif;
       font-style: normal;
-      padding: 0 50px 0 150px;
+      padding: 0 60px 0 150px;
       box-sizing: border-box;
 
       .menu_footer_info {
@@ -114,20 +140,23 @@
 @media screen and (max-width: 1440px) {
   .menu_collapsed {
     .menu_gradient {
-
-      .menu_header{
-        .menu_custom_select{
+      .menu_header {
+        .menu_custom_select {
         }
       }
       .menu_nav {
         gap: 200px;
-        padding: 150px 0 0 150px;
 
         ul {
           li {
             a {
               font-size: 40px;
               line-height: 120px;
+              &:hover::after,
+              &:focus::after {
+                height: 12px;
+                bottom: 3px;
+              }
             }
           }
         }
@@ -135,9 +164,6 @@
       // menu_nav
 
       .menu_footer {
-        height: 140px;
-        padding: 0 50px 0 150px;
-
         .menu_footer_info {
           font-size: 20px;
           line-height: 24px;
@@ -163,21 +189,24 @@
 @media screen and (max-width: 1250px) {
   .menu_collapsed {
     .menu_gradient {
-
-      .menu_header{
-        .menu_custom_select{
+      .menu_header {
+        .menu_custom_select {
         }
       }
 
       .menu_nav {
         gap: 200px;
-        padding: 180px 0 0 150px;
 
         ul {
           li {
             a {
               font-size: 40px;
               line-height: 120px;
+              &:hover::after,
+              &:focus::after {
+                height: 12px;
+                bottom: 4px;
+              }
             }
           }
         }
@@ -185,8 +214,6 @@
       // menu_nav
 
       .menu_footer {
-        height: 140px;
-        padding: 0 50px 0 150px;
 
         .menu_footer_info {
           font-size: 20px;
@@ -213,21 +240,24 @@
 @media screen and (max-width: 1024px) {
   .menu_collapsed {
     .menu_gradient {
-
-      .menu_header{
-        .menu_custom_select{
+      .menu_header {
+        .menu_custom_select {
         }
       }
 
       .menu_nav {
         gap: 100px;
-        padding: 150px 0 0 100px;
 
         ul {
           li {
             a {
               font-size: 30px;
               line-height: 100px;
+              &:hover::after,
+              &:focus::after {
+                height: 10px;
+                bottom: 3px;
+              }
             }
           }
         }
@@ -235,9 +265,6 @@
       // menu_nav
 
       .menu_footer {
-        height: 100px;
-        padding: 0 50px 0 100px;
-
         .menu_footer_info {
           font-size: 10px;
           line-height: 14px;
@@ -262,28 +289,24 @@
 @media screen and (max-width: 768px) {
   .menu_collapsed {
     .menu_gradient {
-     
-      .menu_header{
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        box-sizing: border-box;
-        padding-right: 40px;
-        .menu_custom_select{
-          display: flex;
+      .menu_header {
+        .menu_custom_select {
         }
       }
 
       .menu_nav {
         gap: 60px;
-        padding: 0 0 0 40px;
 
         ul {
           li {
             a {
               font-size: 20px;
               line-height: 80px;
+              &:hover::after,
+              &:focus::after {
+                height: 8px;
+                bottom: 1px;
+              }
             }
           }
         }
@@ -291,9 +314,9 @@
       // menu_nav
 
       .menu_footer {
-        height: 80px;
         justify-content: flex-end;
-        padding: 0 50px 0 0;
+        padding: 0;
+
 
         .menu_footer_info {
           display: none;
@@ -319,22 +342,24 @@
 @media screen and (max-width: 425px) {
   .menu_collapsed {
     .menu_gradient {
-      .menu_header{
-        height: 80px;
-        padding-right:20px;
-        .menu_custom_select{
+      .menu_header {
+        .menu_custom_select {
         }
       }
 
       .menu_nav {
         gap: 24px;
-        padding: 0 0 0 30px;
 
         ul {
           li {
             a {
               font-size: 16px;
               line-height: 80px;
+              &:hover::after,
+              &:focus::after {
+                height: 6px;
+                bottom: 1px;
+              }
             }
           }
         }
@@ -342,9 +367,6 @@
       // menu_nav
 
       .menu_footer {
-        height: 60px;
-        padding: 0 50px 0 30px;
-
         .menu_footer_info {
           display: none;
         }

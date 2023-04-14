@@ -22,6 +22,20 @@
     font-weight: 700;
     font-size: 15px;
 
+    &:hover::before {
+      content: "";
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      z-index: -1;
+      bottom: 8px;
+      right: 0;
+      background: #33b7bc;
+      -webkit-transform: skew(-55deg);
+      -moz-transform: skew(-55deg);
+      -o-transform: skew(-55deg);
+    }
+
     &::after {
       content: "\f078";
       display: inline-block;
@@ -159,7 +173,6 @@
     display: none;
   }
 }
-
 
 @media screen and (max-width: 425px) {
   .customized_select {

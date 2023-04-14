@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./BurgerMenu.module.scss";
+import cn from "classnames";
 
 const BurgerMenu = ({nav, setNav}) => {
   return (

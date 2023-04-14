@@ -52,10 +52,11 @@ const Header = () => {
   return (
     <header className={s.header}>
       <nav className={s.header_nav}>
-        <ul className={s.left_ul}>
+
           <BurgerMenu setNav={setNav} nav={nav}/>
           <NavBurgerMenu nav={nav}/>
 
+        <ul className={s.left_ul}>
           <li className={s.left_ul_li}>
             <a href="#">Car List</a>
           </li>
@@ -68,7 +69,7 @@ const Header = () => {
         </ul>
         {/* left_ul */}
 
-        <Logo />
+        <Logo classNameLogoHeader={s.header_logo}/>
 
         <ul className={s.right_ul}>
           <li className={s.right_ul_number}>+971 58 590 7875</li>

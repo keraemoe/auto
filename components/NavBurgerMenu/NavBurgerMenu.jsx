@@ -4,6 +4,7 @@ import s from "./NavBurgerMenu.module.scss";
 import cn from "classnames";
 import SocialNetwork from "../SocialNetwork/SocialNetwork";
 import CustomSelect from "../CustomSelect/CustomSelect";
+import Logo from "../Logo/Logo";
 
 const optionsLanguage = [
   { id: 5, value: "five", label: "ENG" },
@@ -30,8 +31,13 @@ const NavBurgerMenu = ({ nav }) => {
     >
       <div className={s.menu_gradient}>
         <header className={s.menu_header}>
-        <CustomSelect
-        className={s.menu_custom_select}
+          <Logo
+            classNameLogoNavBurgerMenu={s.menu_logo}
+            classNameTitleFirstNavBurgerMenu={s.menu_title_first}
+            classNameTitleSecondNavBurgerMenu={s.menu_itle_second}
+          />
+          <CustomSelect
+            className={s.menu_custom_select}
             options={optionsLanguage}
             isOpen={languageOpen}
             setIsOpen={setLanguageOpen}
@@ -75,9 +81,9 @@ const NavBurgerMenu = ({ nav }) => {
             24 4th St - Al Quoz - Al <br /> Quoz Industrial Area 3 - Dubai
           </p>
           <div className={s.menu_footer_number_social_network}>
-          <p>+971 58 590 7875</p>
-          <SocialNetwork/>
-          {/* <SocialNetwork /> */}
+            <p>+971 58 590 7875</p>
+            <SocialNetwork />
+            {/* <SocialNetwork /> */}
           </div>
         </footer>
       </div>

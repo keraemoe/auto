@@ -12,21 +12,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px 0 181px;
+    padding: 0 60px;
     box-sizing: border-box;
     margin: auto;
 
     .left_ul,
     .right_ul {
+      max-width: 380px;
+      width: 100%;
       display: flex;
       align-items: center;
-      gap: 40px;
+      justify-content: space-between;
       list-style: none;
     }
 
     .left_ul {
       .left_ul_li {
         a {
+          position: relative;
           text-decoration: none;
           font-family: "Stolzl", sans-serif;
           font-style: normal;
@@ -35,9 +38,24 @@
           line-height: 90px;
           color: #d7d7d7;
 
-          &:hover {
-            transition: 0.3s;
+          &:hover,
+          &:focus {
             color: #ffffff;
+          }
+
+          &:hover::after,
+          &:focus::after {
+            content: "";
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            z-index: -1;
+            bottom: 1px;
+            right: 0;
+            background: #33b7bc;
+            -webkit-transform: skew(-55deg);
+            -moz-transform: skew(-55deg);
+            -o-transform: skew(-55deg);
           }
         }
       }
@@ -60,15 +78,15 @@
 }
 // header
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1440px) {
   .header {
     .header_nav {
       height: 180px;
-      padding: 0 40px 0 161px;
+      padding: 0 40px;
 
       .left_ul,
       .right_ul {
-        gap: 30px;
+        max-width: 340px;
       }
 
       .left_ul {
@@ -96,11 +114,11 @@
   .header {
     .header_nav {
       height: 150px;
-      padding: 0 30px 0 141px;
+      padding: 0 30px;
 
       .left_ul,
       .right_ul {
-        gap: 20px;
+        max-width: 280px;
       }
 
       .left_ul {
@@ -128,7 +146,7 @@
   .header {
     .header_nav {
       height: 100px;
-      padding: 0 50px 0 151px;
+      padding: 0 50px;
 
       .left_ul {
         .left_ul_li {
@@ -137,7 +155,13 @@
       }
       // left_ul
 
+      .header_logo {
+        display: none;
+      }
+      // header_logo
+
       .right_ul {
+        justify-content: flex-end;
         .right_ul_number {
           display: none;
         }
@@ -153,8 +177,7 @@
   .header {
     .header_nav {
       height: 80px;
-      padding: 0 20px 0 121px;
-
+      padding: 0 20px;
     }
     // nav
   }

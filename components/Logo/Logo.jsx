@@ -1,9 +1,10 @@
 import React from 'react';
 import s from "./Logo.module.scss";
+import cn from "classnames";
 
-const Logo = () => {
+const Logo = ({classNameLogoHeader,classNameLogoNavBurgerMenu, classNameTitleFirstNavBurgerMenu, classNameTitleSecondNavBurgerMenu}) => {
     return (
-        <div className={s.logo_title}>
+        <div className={cn(s.logo_title, classNameLogoNavBurgerMenu)}>
         <svg
           className={s.logo}
           viewBox="0 0 71 67"
@@ -37,7 +38,7 @@ const Logo = () => {
         </svg>
 
         <svg
-          className={s.title_first}
+          className={cn(s.title_first, classNameLogoHeader, classNameTitleFirstNavBurgerMenu)}
           viewBox="0 0 147 29"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +50,7 @@ const Logo = () => {
         </svg>
 
         <svg
-          className={s.title_second}
+          className={cn(s.title_second, classNameLogoHeader, classNameTitleSecondNavBurgerMenu)}
           viewBox="0 0 128 9"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
