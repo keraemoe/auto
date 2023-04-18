@@ -1,12 +1,13 @@
 import React from "react";
 import s from "./BurgerMenu.module.scss";
-import cn from "classnames";
 
-const BurgerMenu = ({nav, setNav}) => {
+const BurgerMenu = ({ nav, setNav }) => {
   return (
-    <div className={s.burger_menu} onClick={() => setNav(!nav)}>
-      <span></span>
-      <span></span>
+    <div className={s.container} onClick={() => setNav(!nav)}>
+      <div className={s.burgerMenu}>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };

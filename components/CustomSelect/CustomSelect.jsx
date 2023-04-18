@@ -3,7 +3,7 @@ import s from "./CustomSelect.module.scss";
 import cn from "classnames";
 
 const CustomSelect = ({
-  className,
+  classNameNavBurgerMenu,
   options,
   isOpen,
   setIsOpen,
@@ -14,7 +14,7 @@ const CustomSelect = ({
   return (
     <div
       className={
-        isOpen ? cn(s.customized_select, s.is_open) : cn(s.customized_select, className)
+        isOpen ? cn(s.mySelect, s.open, classNameNavBurgerMenu) : cn(s.mySelect, classNameNavBurgerMenu)
       }
     >
       <span
@@ -29,18 +29,19 @@ const CustomSelect = ({
         {options.map((option) => {
           return (
              <li
-              className={s.select__list__item}
+              className={s.select__item}
               key={option.id}
               onClick={() => onClick(option.label)}
             >
               {option.label}
             </li>
+            // selectSelect__item
           );
         })}
       </ul>
-      {/* select__list */}
+      {/* selectSelect__list */}
     </div>
-    // customized_select, is_open
+    // select, open
   );
 };
 

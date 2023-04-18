@@ -3,12 +3,12 @@
   width: 100%;
   height: 100vh;
   margin: auto;
-  .hero_background {
+  .hero__background {
     width: 100%;
     height: 100%;
     background: url(../../public/background.png) no-repeat center;
     background-size: cover;
-    .hero_gradient {
+    .hero__gradient {
       position: relative;
       width: 100%;
       height: 100%;
@@ -17,7 +17,7 @@
         rgba(22, 21, 22, 0.9) -7.87%,
         rgba(22, 21, 22, 0.6) 100%
       );
-      .hero_title {
+      .hero__title {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -37,26 +37,26 @@
           font-size: 32px;
         }
       }
-      // hero_title
+      // hero__title
 
-      .hero_social_network {
+      .hero__social {
         position: absolute;
         right: 60px;
         bottom: 60px;
       }
-      // hero_social_network
+      // hero__social
     }
-    // hero_gradient
+    // hero__gradient
   }
-  // hero_background
+  // hero__background
 }
 // hero
 
 @media screen and (max-width: 1440px) {
   .hero {
-    .hero_background {
-      .hero_gradient {
-        .hero_title {
+    .hero__background {
+      .hero__gradient {
+        .hero__title {
           line-height: 80px;
           h1 {
             font-size: 100px;
@@ -65,25 +65,25 @@
             font-size: 26px;
           }
         }
-        // hero_title
-        .hero_social_network {
+        // hero__title
+        .hero__social {
           right: 40px;
           bottom: 40px;
         }
-        // hero_social_network
+        // hero__social
       }
-      // hero_gradient
+      // hero__gradient
     }
-    // hero_background
+    // hero__background
   }
   // hero
 }
 
 @media screen and (max-width: 1024px) {
   .hero {
-    .hero_background {
-      .hero_gradient {
-        .hero_title {
+    .hero__background {
+      .hero__gradient {
+        .hero__title {
           line-height: 50px;
           h1 {
             font-size: 60px;
@@ -92,25 +92,25 @@
             font-size: 16px;
           }
         }
-        // hero_title
+        // hero__title
         .hero_social_network {
           right: 40px;
           bottom: 40px;
         }
         // hero_social_network
       }
-      // hero_gradient
+      // hero__gradient
     }
-    // hero_background
+    // hero__background
   }
   // hero
 }
 
 @media screen and (max-width: 768px) {
   .hero {
-    .hero_background {
-      .hero_gradient {
-        .hero_title {
+    .hero__background {
+      .hero__gradient {
+        .hero__title {
           line-height: 50px;
           h1 {
             font-size: 60px;
@@ -119,16 +119,16 @@
             font-size: 16px;
           }
         }
-        // hero_title
+        // hero__title
         .hero_social_network {
           right: 20px;
           bottom: 20px;
         }
         // hero_social_network
       }
-      // hero_gradient
+      // hero__gradient
     }
-    // hero_background
+    // hero__background
   }
   // hero
 }

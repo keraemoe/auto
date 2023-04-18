@@ -6,47 +6,19 @@ import SocialNetwork from "../SocialNetwork/SocialNetwork";
 import CustomSelect from "../CustomSelect/CustomSelect";
 import Logo from "../Logo/Logo";
 
-const optionsLanguage = [
-  { id: 5, value: "five", label: "ENG" },
-  { id: 6, value: "six", label: "RUS" },
-  { id: 7, value: "seven", label: "KGZ" },
-  { id: 8, value: "eigth", label: "XZ" },
-];
 
 const NavBurgerMenu = ({ nav }) => {
-  // Eng
-  const [optionsLanguageState, setOptionsLanguageState] = useState(
-    optionsLanguage[0].label
-  );
-  const [languageOpen, setLanguageOpen] = useState(false);
-
-  const handleOptionClickLanguage = (value) => {
-    console.log("language", languageOpen);
-    setLanguageOpen(!languageOpen);
-    setOptionsLanguageState(value);
-  };
   return (
     <div
-      className={nav ? cn(s.menu_collapsed, s.menu_expanded) : s.menu_collapsed}
+      className={nav ? cn(s.collapsed, s.expanded) : s.collapsed}
     >
-      <div className={s.menu_gradient}>
-        <header className={s.menu_header}>
-          <Logo
-            classNameLogoNavBurgerMenu={s.menu_logo}
-            classNameTitleFirstNavBurgerMenu={s.menu_title_first}
-            classNameTitleSecondNavBurgerMenu={s.menu_itle_second}
-          />
-          <CustomSelect
-            className={s.menu_custom_select}
-            options={optionsLanguage}
-            isOpen={languageOpen}
-            setIsOpen={setLanguageOpen}
-            onClick={handleOptionClickLanguage}
-            selectedOption={optionsLanguageState}
-          />
+      <div className={s.collapsed__gradient}>
+
+        <header className={s.collapsed__header}>
+          <Logo />
         </header>
 
-        <nav className={s.menu_nav}>
+        <nav className={s.collapsed__nav}>
           <ul>
             <li>
               <a href="#">Car List</a>
@@ -76,11 +48,12 @@ const NavBurgerMenu = ({ nav }) => {
             </li>
           </ul>
         </nav>
-        <footer className={s.menu_footer}>
-          <p className={s.menu_footer_info}>
+
+        <footer className={s.footer}>
+          <p className={s.footer__content}>
             24 4th St - Al Quoz - Al <br /> Quoz Industrial Area 3 - Dubai
           </p>
-          <div className={s.menu_footer_number_social_network}>
+          <div className={s.footer__social}>
             <p>+971 58 590 7875</p>
             <SocialNetwork />
             {/* <SocialNetwork /> */}
