@@ -1,0 +1,9 @@
+.slider-image {
+  width: 700px;
+  height: 860px;
+}
+
+.slider-image img {
+  width: 100%;
+  background-color: red;
+}

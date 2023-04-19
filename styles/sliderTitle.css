@@ -1,0 +1,147 @@
+.slider-title {
+  width: 600px;
+  height: 611px;
+}
+
+.slider-title::after {
+  content: "";
+  width: 495px;
+  height: 4px;
+  position: absolute;
+  top: 295px;
+  left: -225px;
+  transform: rotate(90deg);
+  background: #2c2c2c;
+  border-radius: 20px;
+}
+
+/* -------------------------------------------------------------------- */
+/* First slide */
+.slider-title__item_first {
+  margin: 0 0 0 200px;
+}
+
+.slider-title__item_first h1 {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+.slider-title__item_first p {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #646464;
+}
+
+/* ==================================================================== */
+/* Second slide */
+.slider-title__item_second {
+  margin: 0 0 0 150px;
+}
+
+.slider-title__item_second h1 {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.slider-title__item_second p {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #646464;
+}
+
+/* ==================================================================== */
+/* Third slide */
+.slider-title__item_third {
+  margin: 0 0 0 100px;
+}
+
+.slider-title__item_third h1 {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #33b7bc;
+}
+
+.slider-title__item_third p {
+  font-family: "Stolzl", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #049393;
+}
+
+/* -------------------------------------------------------------------- */
+/* Top arrow */
+.slider-title .swiper-button-prev {
+  width: 46px;
+  height: 46px;
+  top: 25px;
+  left: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    90.75deg,
+    #1c1c1c 0.65%,
+    rgba(27, 27, 27, 0.4) 107.06%
+  );
+}
+
+.slider-title .swiper-button-prev::after {
+  content: "";
+  width: 42px;
+  height: 42px;
+  background: #161516;
+  border-radius: 50%;
+}
+
+.slider-title .swiper-button-prev::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../public/topArrow.png) no-repeat center;
+}
+
+/* ==================================================================== */
+
+/* Bottom arrow */
+.slider-title .swiper-button-next {
+  width: 46px;
+  height: 46px;
+  left: 0;
+  top: 565px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90.75deg,
+    #1c1c1c 0.65%,
+    rgba(27, 27, 27, 0.4) 107.06%
+  );
+}
+
+.slider-title .swiper-button-next::after {
+  content: "";
+  width: 42px;
+  height: 42px;
+  background: #161516;
+  border-radius: 50%;
+}
+
+.slider-title .swiper-button-next::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../public/bottomArrow.png) no-repeat center;
+}
