@@ -1,10 +1,98 @@
 ﻿import React from 'react';
 import s from './Footer.module.scss'
+import Image from 'next/image';
+import visa from '../../public/visa.png'
+import FooterSlider from '../FooterSlider/FooterSlider';
+import applePay from '../../public/applePay.png'
+import cash from '../../public/cash.png'
+import express from '../../public/express.png'
+import giroPay from '../../public/giroPay.png'
+import googlePay from '../../public/googlePay.png'
+import masterCard from '../../public/masterCard.png'
+import satefy from '../../public/satefy.png'
+import tether from '../../public/tether.png'
+import unionPay from '../../public/unionPay.png'
+import facebook from '../../public/facebook.png'
+import insta from '../../public/instagram 1.png'
+import tiktok from '../../public/tiktok.png'
+import youtube from '../../public/youtube.png'
+import SocialNetwork from '../SocialNetwork/SocialNetwork';
+
 
 const Footer = () => {
-    return (
-        <div>
 
+    const FooterImgDate = [
+        { id: 1, img: visa },
+        { id: 2, img: masterCard },
+        { id: 3, img: express },
+        { id: 4, img: unionPay },
+        { id: 5, img: tether },
+        { id: 6, img: googlePay },
+        { id: 7, img: applePay },
+        { id: 8, img: giroPay },
+        { id: 9, img: cash },
+        { id: 10, img: satefy },
+    ]
+
+    return (
+        <div style={{ width: '100^', background: '#161516' , height: '1500px' }}>
+            <footer className={s.footer}>
+                <div className={s.footer_columns}>
+                    <div className={s.footer_column_left}>
+                        <div className={s.footer_column_left_block}>
+                            <h1>For Customers</h1>
+                            <p>About Us</p>
+                            <p>Conditions</p>
+                            <p>Testimonials</p>
+                            <p>Articles</p>
+                            <p>Contacts</p>
+                        </div>
+                        <div className={s.footer_column_left_block}>
+                            <h1>Car List</h1>
+                            <p>SUVs</p>
+                            <p>Convertibles</p>
+                            <p>Sports Cars</p>
+                            <p>Premium</p>
+                            <p>Coupe</p>
+                        </div>
+                        <div className={s.footer_column_left_block}>
+                            <h1>Service</h1>
+                            <p>Car List</p>
+                            <p>Yacht list</p>
+                            <p>Chauffeur</p>
+                        </div>
+                    </div>
+                    <div className={s.footer_column_right}>
+                        <div className={s.footer_column_right_block}>
+                            <div className={s.footer_column_right_block_header}>
+                                <p>+971 58 590 7875</p>
+                                <SocialNetwork className={s.molox} style={{height: '30px' , width: '30px'}}/>
+                            </div>
+                            <button className={s.footer_column_right_block_btn}>
+                                REQUEST A CALLBACK
+                            </button>
+                            <h4>24 4th St - Al Quoz - Al Quoz <br /> Industrial Area 3 - Dubai</h4>
+                            <div className={s.footer_column_right_block_input}>
+                                <input type="email" placeholder='Write your E-mail' />
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={s.footer_payments}>
+                    <FooterSlider FooterImgDate={FooterImgDate} />
+                </div>
+                <div className={s.footer_info}>
+                    <p>Privacy Policy</p>
+                    <h4>©2023 TRINITY. All rights reserved</h4>
+                    <div className={s.footer_info_imgs}>
+                        <Image src={facebook}></Image>
+                        <Image src={tiktok}></Image>
+                        <Image src={youtube}></Image>
+                        <Image src={insta}></Image>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 };
