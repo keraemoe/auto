@@ -12,8 +12,8 @@ const FooterSlider = ({ FooterImgDate }) => {
 			<Swiper slidesPerView={10}
 				className="myFooterSlider"
 				modules={[Autoplay]}
-				autoplay={{delay: 1000}}
-				speed={1300}
+				autoplay={{delay: 500}}
+				speed={600}
 				loop={true}
 				breakpoints={{
 					1920: {
@@ -36,6 +36,7 @@ const FooterSlider = ({ FooterImgDate }) => {
 					},
 					520: {
 						slidesPerView: 4,
+						spaceBetween: 70,
 					},
 					420: {
 						slidesPerView: 3,
