@@ -1,3 +1,4 @@
+import Discount from '@/components/Discount/Discount'
 import Hero from '@/components/Hero/Hero'
 import SliderBlock from '@/components/SliderBlock/SliderBlock'
 import Head from 'next/head'
@@ -13,7 +14,8 @@ export default function Home() {
         <script src="https://kit.fontawesome.com/1f5bacc93d.js" crossorigin="anonymous"></script>
       </Head>
       <Hero/>
-      <SliderBlock/>
+      {/* <SliderBlock/> */}
+      <Discount/>
     </>
   )
 }
