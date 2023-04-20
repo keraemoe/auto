@@ -1,0 +1,19 @@
+.Reviews {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+    .videos{
+      width: 100%;
+    }
+    h1{
+      font-family: 'Stolzl';
+      font-weight: 500;
+      font-size: 100px;
+      line-height: 130px;
+      
+      }
+  }
+  
