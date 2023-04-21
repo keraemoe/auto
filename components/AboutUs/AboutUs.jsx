@@ -33,8 +33,9 @@ const AboutUs = () => {
 				<Image className={s.aboutus_section_background} src={backImg} alt='backImg' />
 				<div className={s.background_gradient_left}></div>
 				<div className={s.background_gradient_right}></div>
-				{inView &&
-					(
+				{inView && (
+					<>
+
 						<div className={s.aboutus_section_block}>
 							<div className={s.aboutus_section_block_header}>
 								<h1>About Us</h1>
@@ -68,7 +69,6 @@ const AboutUs = () => {
 											<div className={s.background_text}>
 												<p className={`${s.num} ${s.num3}`}></p>
 											</div>
-
 											<div style={{ display: 'flex', alignItems: 'flex-end', height: '90px' }}>
 												<h4>people</h4>
 											</div>
@@ -89,11 +89,13 @@ const AboutUs = () => {
 								<Image className={s.right_quotes} src={rightQuotes} />
 							</div>
 						</div>
-					)
-				}
-				<div className={s.aboutus_section_person}>
-					<Image src={manCars} alt='manCars' />
-				</div>
+						<div className={s.aboutus_section_person}>
+							<Image src={manCars} alt='manCars' />
+						</div>
+					</>
+
+				)}
+
 			</section>
 		</div>
 
