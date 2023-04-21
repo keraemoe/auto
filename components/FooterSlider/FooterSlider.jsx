@@ -52,7 +52,7 @@ const FooterSlider = ({ FooterImgDate }) => {
 				{
 					FooterImgDate.map((item => {
 						return (
-							<SwiperSlide><Image src={item.img} /></SwiperSlide>
+							<SwiperSlide key={item.id}><Image src={item.img} alt='brand_img'/></SwiperSlide>
 						)
 					}))
 				}

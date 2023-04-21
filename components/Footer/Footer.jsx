@@ -20,7 +20,6 @@ import SocialNetwork from '../SocialNetwork/SocialNetwork';
 
 
 const Footer = () => {
-
     const FooterImgDate = [
         { id: 1, img: visa },
         { id: 2, img: masterCard },
@@ -33,40 +32,39 @@ const Footer = () => {
         { id: 9, img: cash },
         { id: 10, img: satefy },
     ]
-
     return (
-        <div style={{ width: '100^', background: '#161516'  }}>
+        <div style={{ width: '100^', background: '#161516' }}>
             <footer className={s.footer}>
                 <div className={s.footer_columns}>
                     <div className={s.footer_column_left}>
                         <div className={s.footer_column_left_block}>
                             <h1>For Customers</h1>
-                            <p>About Us</p>
-                            <p>Conditions</p>
-                            <p>Testimonials</p>
-                            <p>Articles</p>
-                            <p>Contacts</p>
+                            <li><a>About Us</a></li>
+                            <li><a>Conditions</a></li>
+                            <li><a>Testimonials</a></li>
+                            <li><a>Articles</a></li>
+                            <li><a>Contacts</a></li>
                         </div>
                         <div className={s.footer_column_left_block}>
                             <h1>Car List</h1>
-                            <p>SUVs</p>
-                            <p>Convertibles</p>
-                            <p>Sports Cars</p>
-                            <p>Premium</p>
-                            <p>Coupe</p>
+                            <li><a>SUVs</a></li>
+                            <li><a>Convertibles</a></li>
+                            <li><a>Sports Cars</a></li>
+                            <li><a>Premium</a></li>
+                            <li><a>Coupe</a></li>
                         </div>
                         <div className={s.footer_column_left_block}>
                             <h1>Service</h1>
-                            <p>Car List</p>
-                            <p>Yacht list</p>
-                            <p>Chauffeur</p>
+                            <li><a>Car List</a></li>
+                            <li><a>Yacht list</a></li>
+                            <li><a>Chauffeur</a></li>
                         </div>
                     </div>
                     <div className={s.footer_column_right}>
                         <div className={s.footer_column_right_block}>
                             <div className={s.footer_column_right_block_header}>
                                 <p>+971 58 590 7875</p>
-                                <SocialNetwork className={s.molox} style={{height: '30px' , width: '30px'}}/>
+                                <SocialNetwork className={s.molox} style={{ height: '30px', width: '30px' }} />
                             </div>
                             <button className={s.footer_column_right_block_btn}>
                                 REQUEST A CALLBACK
@@ -86,10 +84,10 @@ const Footer = () => {
                     <p>Privacy Policy</p>
                     <h4>©2023 TRINITY. All rights reserved</h4>
                     <div className={s.footer_info_imgs}>
-                        <Image src={facebook}></Image>
-                        <Image src={tiktok}></Image>
-                        <Image src={youtube}></Image>
-                        <Image src={insta}></Image>
+                        <Image src={facebook} alt='img_social'></Image>
+                        <Image src={tiktok} alt='img_social'></Image>
+                        <Image src={youtube} alt='img_social'></Image>
+                        <Image src={insta} alt='img_social'></Image>
                     </div>
                 </div>
             </footer>
