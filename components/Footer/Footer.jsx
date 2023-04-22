@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import s from './Footer.module.scss'
 import Image from 'next/image';
 import visa from '../../public/visa.png'
@@ -17,9 +17,28 @@ import insta from '../../public/instagram 1.png'
 import tiktok from '../../public/tiktok.png'
 import youtube from '../../public/youtube.png'
 import SocialNetwork from '../SocialNetwork/SocialNetwork';
+import axios from 'axios';
 
 
 const Footer = () => {
+
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        try {
+            axios
+                .post('https://jsonplaceholder.typicode.com/posts', email)
+                .then((res) => {
+                    console.log(res)
+                    setEmail('')
+                })
+        } catch (err) {
+            console.log(err)
+        }
+    };
+
+
     const FooterImgDate = [
         { id: 1, img: visa },
         { id: 2, img: masterCard },
@@ -32,6 +51,7 @@ const Footer = () => {
         { id: 9, img: cash },
         { id: 10, img: satefy },
     ]
+
     return (
         <div style={{ width: '100^', background: '#161516' }}>
             <footer className={s.footer}>
@@ -64,16 +84,23 @@ const Footer = () => {
                         <div className={s.footer_column_right_block}>
                             <div className={s.footer_column_right_block_header}>
                                 <p>+971 58 590 7875</p>
-                                <SocialNetwork className={s.molox} style={{ height: '30px', width: '30px' }} />
+                                <SocialNetwork className={s.molox} style={{ height: '20px', width: '20px' }} />
                             </div>
                             <button className={s.footer_column_right_block_btn}>
                                 REQUEST A CALLBACK
                             </button>
                             <h4>24 4th St - Al Quoz - Al Quoz <br /> Industrial Area 3 - Dubai</h4>
-                            <div className={s.footer_column_right_block_input}>
-                                <input type="email" placeholder='Write your E-mail' />
-                                <button>Submit</button>
-                            </div>
+                            <form onSubmit={handleSubmit}>
+                                <div className={s.footer_column_right_block_input}>
+                                    <input value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        type="email"
+                                        minLength={3}
+                                        placeholder='Write your E-mail'
+                                    />
+                                    <button onClick={() => console.log(email)}>Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
