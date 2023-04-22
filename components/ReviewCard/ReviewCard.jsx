@@ -1,10 +1,11 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import s from "./ReviewCard.module.scss";
-import { Swiper, SwiperSlide,Navigation, Pagination, Autoplay } from "swiper/react";
+import { CarVideos } from "../../constants/constants";
+import { Swiper, SwiperSlide, Navigation, Pagination} from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 
-const ReviewCard = ({ CarVideos }) => {
+const ReviewCard = () => {
   console.log(CarVideos);
 
   // SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -55,7 +56,6 @@ const ReviewCard = ({ CarVideos }) => {
         slidesPerView={4}
         loop={true}
         grabCursor={true}
-        modules={[Autoplay]}
         onSwiper={(swiper) => {
           swiper = swiper;
         }}

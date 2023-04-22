@@ -13,9 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <script src="https://kit.fontawesome.com/1f5bacc93d.js" crossorigin="anonymous"></script>
       </Head>
-      <Hero/>
-      {/* <Review/> */}
-      <AskUsAnything/>
+      <Hero />
+      <Review />
+      <AskUsAnything />
     </>
   )
 }
