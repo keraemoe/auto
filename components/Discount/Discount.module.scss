@@ -141,9 +141,10 @@
         height: 68px;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 22px;
         padding-left: 65px;
+        transition: 0.3s;
         outline: none;
         border: 1px solid #434343a8;
 
@@ -157,6 +158,25 @@
         background-color: #2b282b;
         opacity: 0.4;
         border-radius: 10px;
+      }
+      input:invalid {
+        border: 1px solid #d34b4ba8 !important;
+        animation: shake 0.2s 2;
+        color: #d34b4b;
+      }
+      input:focus {
+        border: 1px solid #33b7bc;
+      }
+      @keyframes shake {
+        25% {
+          translate: 5px 0;
+        }
+        50% {
+          translate: -5px 0;
+        }
+        75% {
+          translate: 5px 0;
+        }
       }
       button {
         width: 180px;
@@ -271,20 +291,19 @@
 
 @media screen and (max-width: 1861px) {
   .discount_section__block_background {
-    left: 1420px;
-    left: inherit;
+    left: 1420px !important;
   }
 }
 
 @media screen and (max-width: 1748px) {
   .discount_section__block_background {
-    left: inherit;
+    left: inherit !important;
   }
 }
 
 @media screen and (max-width: 1364px) {
   .discount_section__block_background {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -359,6 +378,7 @@
     input {
       max-width: 100% !important;
       margin-bottom: 15px;
+      font-size: 18px !important; 
     }
     button {
       width: 100% !important;
