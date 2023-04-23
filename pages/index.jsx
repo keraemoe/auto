@@ -1,3 +1,4 @@
+import Discount from '@/components/Discount/Discount'
 import Hero from '@/components/Hero/Hero'
 import ShowCars from '@/components/ShowCars/ShowCars'
 import SliderBlock from '@/components/SliderBlock/SliderBlock'
@@ -15,7 +16,8 @@ export default function Home() {
       </Head>
       <Hero/>
       <ShowCars/>
-      <SliderBlock/>
+      {/* <SliderBlock/> */}
+      <Discount/>
     </>
   )
 }
