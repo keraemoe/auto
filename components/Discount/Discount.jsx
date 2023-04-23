@@ -58,24 +58,26 @@ const Discount = () => {
 				</form>
 			</div>
 			<div className={s.discount_section__block_background}>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
-				<span>+</span>
-				<span>+</span>
-				<span style={{ color: '#33B7BC' }}>+</span>
-				<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
-				<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
-				<span style={{ color: '#33B7BC' }}>+</span>
-				<span>+</span>
-				<span>+</span>
+				<div className={s.discount_section__block_background__block}>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
+					<span>+</span>
+					<span>+</span>
+					<span style={{ color: '#33B7BC' }}>+</span>
+					<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
+					<span style={{ color: 'red', visibility: 'hidden' }}>+</span>
+					<span style={{ color: '#33B7BC' }}>+</span>
+					<span>+</span>
+					<span>+</span>
+				</div>
 			</div>
 			<div className={s.discount_section_brands}>
 				<div className={s.marquee}>
