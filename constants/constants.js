@@ -1,22 +1,22 @@
 ﻿export const CarVideos = [
     {
-      link: "https://player.vimeo.com/external/328465444.sd.mp4?s=f9ccb1200a449bdf2dd10d99e96f0603a24e24d3&profile_id=164&oauth2_token_id=57447761",
+      link: "https://images.pexels.com/photos/3166786/pexels-photo-3166786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       id: '1'
     },
     {
-      link: "https://www.youtube.com/embed/fdGWRq1dVBA",
+      link: "https://images.pexels.com/photos/3166786/pexels-photo-3166786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       id: '2'
     },
     {
-      link: "https://youtu.be/1Ftbd-1UgZc",
+      link: "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1c",
       id: '3'
     },
     {
-      link: "https://www.youtube.com/embed/WGXu5018Wxc",
+      link: "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       id: '4'
     },
     {
-      link: "https://www.youtube.com/embed/i-QaaokEQms",
+      link: "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       id: '5'
     },
   ];

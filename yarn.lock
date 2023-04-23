@@ -1650,7 +1650,7 @@ yallist@^4.0.0:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
-yet-another-react-lightbox@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.4.0.tgz#53357215d8260b6b176c5960ba4d696bcd7b509d"
-  integrity sha512-5g96NxdCPeRC8S2xC9u70ETa9EqicUm5qAUPTSI7pp+ADZZqbH5sNFT7culxkuli05xdUrjsvWoCdaaRH4rx8w==
+yet-another-react-lightbox@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.5.0.tgz#7b71d3fcd0d34e702d923fef82da6ab992973b28"
+  integrity sha512-WxP/DWHaPzqqdN4lqqZO1MjOlDczxAyw1dr9fo3JkMTqTzhQoAivyB7Ipr85iK+EMwUSM2HiSY6A0x/bm1lvwQ==

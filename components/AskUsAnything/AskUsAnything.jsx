@@ -11,6 +11,7 @@ const AskUsAnything = () => {
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
+        controls={false}
       ></iframe>
       <div className={s.right_block}>
         <h1>Ask us anything</h1>

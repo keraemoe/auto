@@ -1,83 +1,76 @@
 import React, { useRef, useState } from "react";
 import s from "./ReviewCard.module.scss";
 import { CarVideos } from "../../constants/constants";
-import { Swiper, SwiperSlide, Navigation, Pagination} from "swiper/react";
+import { Swiper, SwiperSlide, Navigation, Pagination } from "swiper/react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 // Import Swiper styles
 import "swiper/css";
+import slide from "../../assets/Merc.png";
+import slideTwo from "../../assets/Classic.png";
+import slideThree from "../../assets/Classic2.png";
+import slideFour from "../../assets/Audi.png";
 
 const ReviewCard = () => {
   console.log(CarVideos);
 
-  // SwiperCore.use([Navigation, Pagination, Autoplay]);
-
-  let mouseDown = false;
-  let startX, startY;
-  let threshold = 50; // Минимальное расстояние, чтобы считать свайп
-
-  const handleMouseDown = (event) => {
-    mouseDown = true;
-    startX = event.clientX;
-    startY = event.clientY;
-  };
-
-  const handleMouseMove = (event) => {
-    if (!mouseDown) {
-      return;
-    }
-
-    let currentX = event.clientX;
-    let currentY = event.clientY;
-    let diffX = startX - currentX;
-    let diffY = startY - currentY;
-
-    if (Math.abs(diffX) > Math.abs(diffY)) {
-      if (diffX > threshold) {
-        swiper.slideNext();
-        mouseDown = false;
-      } else if (diffX < -threshold) {
-        swiper.slidePrev();
-        mouseDown = false;
-      }
-    }
-  };
-
-  const handleMouseUp = () => {
-    mouseDown = false;
-  };
-
-  let swiper = null;
+  const [open, setOpen] = useState(false);
+  const [animationDuration, setAnimationDuration] = useState(500);
+  const [maxZoomPixelRatio, setMaxZoomPixelRatio] = useState(1);
+  const [zoomInMultiplier, setZoomInMultiplier] = useState(2);
+  const [doubleTapDelay, setDoubleTapDelay] = useState(300);
+  const [doubleClickDelay, setDoubleClickDelay] = useState(300);
+  const [doubleClickMaxStops, setDoubleClickMaxStops] = useState(2);
+  const [keyboardMoveDistance, setKeyboardMoveDistance] = useState(50);
+  const [wheelZoomDistanceFactor, setWheelZoomDistanceFactor] = useState(100);
+  const [pinchZoomDistanceFactor, setPinchZoomDistanceFactor] =
+    React.useState(100);
+  const [scrollToZoom, setScrollToZoom] = React.useState(false);
 
   return (
     <div className={s.ReviewCard}>
-      <Swiper
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
-        slidesPerView={4}
-        loop={true}
-        grabCursor={true}
-        onSwiper={(swiper) => {
-          swiper = swiper;
-        }}
-        className="myReviewSwiper"
-      >
-        {CarVideos.map((item, id) => {
+      <Swiper speed={2000} slidesPerView={4} className="myReviewSwiper">
+        {CarVideos.map((item) => {
           return (
-            <SwiperSlide key={id}>
-              <iframe
-                src={item.link}
-                frameborder="0"
-                width={"476px"}
-                height={"740px"}
-                allowFullScreen
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-              ></iframe>
+            <SwiperSlide
+              key={item.id}
+              id={item.id}
+              onClick={() => setOpen(true)}
+            >
+              <img src={item.link} alt="img" />
+              <div className={s.overlay}>
+                <p>посмотреть галерею</p>
+              </div>
             </SwiperSlide>
           );
         })}
       </Swiper>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        Keyboard
+        slides={[
+          { src: slide.src },
+          { src: slideTwo.src },
+          { src: slideThree.src },
+          { src: slideFour.src },
+        ]}
+        plugins={[Captions, Zoom]}
+        animation={{ zoom: animationDuration }}
+        zoom={{
+          maxZoomPixelRatio,
+          zoomInMultiplier,
+          doubleTapDelay,
+          doubleClickDelay,
+          doubleClickMaxStops,
+          keyboardMoveDistance,
+          wheelZoomDistanceFactor,
+          pinchZoomDistanceFactor,
+          scrollToZoom,
+        }}
+      />
     </div>
   );
 };

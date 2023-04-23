@@ -1,5 +1,6 @@
 import AskUsAnything from '@/components/AskUsAnything/AskUsAnything'
 import Hero from '@/components/Hero/Hero'
+import Revievv from '@/components/Revievv/Revievv'
 import Review from '@/components/Review/Review'
 import Head from 'next/head'
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Hero />
       <Review />
+      <Revievv/>
       <AskUsAnything />
     </>
   )
