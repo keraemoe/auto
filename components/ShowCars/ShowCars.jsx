@@ -47,9 +47,6 @@ const ShowCars = () => {
 	]);
 
 
-
-
-
 	function filterCarsByDate() {
 		const sortedCars = cars.sort((a, b) => b.date - a.date);
 		setCars([...sortedCars]);
@@ -70,15 +67,11 @@ const ShowCars = () => {
 		setCars([...sortedCars])
 	}
 
-
 	const handleFilterClick = (filter) => {
 		setSelectedFilter(filter);
 	};
 
-
-
 	return (
-		<div style={{width: '100%' , background: '#161516'}}>
 			<section className={s.showcars_section}>
 				<div className={s.cars_filter}>
 					<p className={classNames(s.cars_filter_title, {
@@ -112,8 +105,6 @@ const ShowCars = () => {
 					</button>
 				</div>
 			</section>
-		</div> 
-
 	);
 };
 
