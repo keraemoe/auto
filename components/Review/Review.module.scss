@@ -1,12 +1,12 @@
 .Reviews {
-    max-width: 1920px;
-    height: 1080px;
+    max-width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     background-color: #2B2B2B;
     .videos{
-      width: 100%;
+      max-width: 100%;
     }
     h1{
       font-family: 'Stolzl';
@@ -17,4 +17,14 @@
       }
     
   }
+
+@media screen and (max-width:425px) {
+  .Reviews{
+    h1{
+      font-size: 70px;
+      line-height: 80px;
+    }
+  }
+}
+
   

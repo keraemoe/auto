@@ -31,7 +31,51 @@ const ReviewCard = () => {
 
   return (
     <div className={s.ReviewCard}>
-      <Swiper speed={2000} slidesPerView={4} className="myReviewSwiper">
+      <Swiper
+        speed={2000}
+        slidesPerView={4}
+        className="myReviewSwiper"
+        breakpoints={{
+          320:{
+
+            width:320, 
+            slidesPerView:2,
+            spaceBetween:10
+          },
+          425:{
+            width:425,
+            slidesPerView:2,
+            spaceBetween:10
+          },
+          // when window width is >= 640px
+          640: {
+            width: 640,
+            slidesPerView: 3,
+            spaceBetween:10
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 3,
+            spaceBetween:10
+          },
+          1024:{
+            width: 1024,
+            slidesPerView: 4,
+            spaceBetween:10
+          },
+          1440:{
+            width: 1440,
+            slidesPerView:4,
+            spaceBetween:10
+          },
+          1920:{
+            width: 1920,
+            slidesPerView:4,
+            spaceBetween:10,
+          }
+        }}
+      >
         {CarVideos.map((item) => {
           return (
             <SwiperSlide
@@ -41,7 +85,7 @@ const ReviewCard = () => {
             >
               <img src={item.link} alt="img" />
               <div className={s.overlay}>
-                <p>посмотреть галерею</p>
+                <p>VISIT THE GALLERY</p>
               </div>
             </SwiperSlide>
           );
