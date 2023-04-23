@@ -110,7 +110,6 @@ const Header = () => {
       </nav>
       {/* nav */}
     </header>
-    // header
   );
 };
 
