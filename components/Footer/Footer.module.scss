@@ -34,7 +34,6 @@
   width: 100%;
   background: #161516;
   margin: 0 auto;
-
   .footer_columns {
     width: 100%;
     height: 516px;
@@ -52,7 +51,6 @@
       justify-content: space-between;
       flex-wrap: wrap;
       .footer_column_left_block {
-        width: 158px;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -181,12 +179,12 @@
             border-radius: 10px;
           }
           input:invalid {
-            border: 1px solid #D34B4BA8 !important;
+            border: 1px solid #d34b4ba8 !important;
             animation: shake 0.2s 2;
-            color: #D34B4B;
+            color: #d34b4b;
           }
-          input:focus{
-            border: 1px solid #33B7BC;
+          input:focus {
+            border: 1px solid #33b7bc;
           }
           @keyframes shake {
             25% {
@@ -291,9 +289,12 @@
   .footer_column_right_block {
     padding: 0 2% 0 2%;
   }
+  .footer_info{
+    padding: 0 2% 0 2%;
+  }
 }
 
-@media screen and (max-width: 1378px) {
+@media screen and (max-width: 1120px) {
   .footer_columns {
     height: 630px !important;
   }
@@ -304,7 +305,8 @@
     flex-wrap: wrap;
     height: 850px !important;
     .footer_column_left {
-      padding-right: 0 !important;
+      padding-right: 4% !important;
+      padding: 0 4% 0 4%;
     }
   }
 }
@@ -323,10 +325,11 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 655px) {
   .footer_columns {
     height: 1010px !important;
     .footer_column_left {
+      padding-right: 1% !important;
       padding: 0 5% 0 5%;
     }
     .footer_column_right {
@@ -347,7 +350,7 @@
   }
 }
 
-@media screen and (max-width: 417px) {
+@media screen and (max-width: 427px) {
   .footer_column_right_block_input {
     input {
       max-width: 408px !important;
@@ -361,23 +364,28 @@
       margin: 10px 5px 0 5px !important;
     }
   }
+  .footer_column_left{
+    .footer_column_left_block{
+      margin-bottom: 35px;
+    }
+  }
 }
 
 @media screen and (max-width: 350px) {
   .footer_column_right_block {
     padding: 0 2% 0 2%;
   }
-  .footer_column_right_block_input{
-    input{
+  .footer_column_right_block_input {
+    input {
       font-size: 17px !important;
     }
-    button{
+    button {
       font-size: 13px !important;
     }
   }
 }
 @media screen and (max-width: 300px) {
-  .footer_column_right_block_header{
+  .footer_column_right_block_header {
     flex-direction: column;
   }
 }

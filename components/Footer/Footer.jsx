@@ -53,7 +53,6 @@ const Footer = () => {
     ]
 
     return (
-        <div style={{ width: '100^', background: '#161516' }}>
             <footer className={s.footer}>
                 <div className={s.footer_columns}>
                     <div className={s.footer_column_left}>
@@ -118,7 +117,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-        </div>
     );
 };
 
