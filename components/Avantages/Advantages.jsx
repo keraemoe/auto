@@ -19,15 +19,6 @@ const cars = [
         id: 4,
         img: '/adv.png'
     },
-    {
-        id: 5,
-        img: '/adv.png'
-    },
-    {
-        id: 6,
-        img: '/adv.png'
-    },
-
 ]
 
 const Advantages = () => {
