@@ -5,8 +5,17 @@
 
 /* -------------------------------------------------------------------- */
 /* Active slide */
+.my-slider .swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s !important;
+  transform: translate(34px) !important;
+}
+
 .my-slider .swiper-slide-active {
   transform: translate(-74px) !important;
+  transition: 0.5s !important;
 }
 
 .my-slider .swiper-slide-active::after {
@@ -39,7 +48,7 @@
 /* Prev, next slide */
 .my-slider .swiper-slide-prev,
 .my-slider .swiper-slide-next {
-  transform: translateX(-44px) !important;
+  transform: translateX(-64px) !important;
 }
 
 .my-slider .swiper-slide-prev h1,
@@ -143,6 +152,7 @@
   z-index: -1 !important;
   background: #2c2c2c;
   border-radius: 20px;
+  display: block !important;
 }
 
 .my-slider .swiper-scrollbar-drag {
