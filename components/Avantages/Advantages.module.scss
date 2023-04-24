@@ -1,0 +1,35 @@
+﻿.advantages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-family: "Stolzl";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 100px;
+    line-height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+  .content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 260px;
+    padding-top: 121px;
+    .up {
+      opacity: 0.08;
+      border: 1px solid gray;
+    }
+    .up:hover {
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+}

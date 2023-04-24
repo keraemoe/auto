@@ -1,5 +1,3 @@
-
-
 * {
   padding: 0;
   margin: 0;
@@ -20,11 +18,25 @@ html {
   scroll-behavior: smooth;
 }
 
-h1 , h2 , h3 ,h4 , h5 ,h6 , a , p , span , li , ul , input{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+li,
+ul,
+input {
   font-family: "Stolzl";
 }
 
-body{
+body {
   background: #161516;
+}
 
+::-webkit-scrollbar {
+  display: none;
 }
