@@ -1,7 +1,7 @@
 import AboutUs from '@/components/AboutUs/AboutUs'
 import Discount from '@/components/Discount/Discount'
 import Hero from '@/components/Hero/Hero'
-import SliderBlock from '@/components/SliderBlock/MostPopular'
+import SliderBlock from '@/components/MostPopular/MostPopular'
 import Head from 'next/head'
 
 export default function Home() {
