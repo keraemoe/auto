@@ -2,7 +2,7 @@ import AboutUs from '@/components/AboutUs/AboutUs'
 import Advantages from '@/components/Avantages/Advantages'
 import Discount from '@/components/Discount/Discount'
 import Hero from '@/components/Hero/Hero'
-import SliderBlock from '@/components/SliderBlock/SliderBlock'
+import SliderBlock from '@/components/SliderBlock/MostPopular'
 import Head from 'next/head'
 
 export default function Home() {
@@ -20,6 +20,10 @@ export default function Home() {
       <Advantages />
       <SliderBlock />
       <Discount />
+      <Hero/>
+      <SliderBlock/>
+      <AboutUs/>
+      <Discount/>
     </>
   )
 }

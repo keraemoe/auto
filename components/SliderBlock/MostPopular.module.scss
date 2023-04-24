@@ -2,11 +2,13 @@
   display: flex;
   gap: 40px;
   align-items: center;
-  padding: 0 60px 260px 0;
+  padding: 0 60px 260px 60px;
   box-sizing: border-box;
 
   .slider__item_first {
     position: relative;
+    transition: 1s !important;
+    height: 100%;
     .sliderImage__title {
       position: absolute;
       bottom: 25px;
