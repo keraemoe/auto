@@ -20,10 +20,6 @@ export default function Home() {
       <Advantages />
       <SliderBlock />
       <Discount />
-      <Hero/>
-      <SliderBlock/>
-      <AboutUs/>
-      <Discount/>
     </>
   )
 }
