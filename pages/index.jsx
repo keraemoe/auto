@@ -1,9 +1,12 @@
 import AboutUs from '@/components/AboutUs/AboutUs'
 import Advantages from '@/components/Avantages/Advantages'
 import Discount from '@/components/Discount/Discount'
+import AskUsAnything from '@/components/AskUsAnything/AskUsAnything'
 import Hero from '@/components/Hero/Hero'
 import SliderBlock from '@/components/MostPopular/MostPopular'
+import Review from '@/components/Review/Review'
 import Head from 'next/head'
+import ShowCars from '@/components/ShowCars/ShowCars'
 
 export default function Home() {
   return (
@@ -17,9 +20,12 @@ export default function Home() {
       </Head>
       <Hero />
       <SliderBlock />
+      <ShowCars />
       <AboutUs />
+      <Review />
       <Advantages />
-      <Discount />
+      <AskUsAnything />
+      <Discount  />
     </>
   )
 }
