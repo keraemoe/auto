@@ -28,7 +28,7 @@ const Advantages = () => {
                 <h1>Advantages</h1>
                 <div className={s.content}>
                     {cars.map((item) => (
-                        <div className={s.up}>
+                        <div key={item.id} className={s.up}>
                             <Image
                                 className={s.img}
                                 width={639}

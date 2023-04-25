@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import s from "./MostPopular.module.scss";
 import { Scrollbar } from "swiper";
@@ -10,8 +10,9 @@ import { mostPopularContent } from "@/constants/mostPopular";
 
 const SliderBlock = () => {
   const [currentSlide, setCurrentSlide] = useState(mostPopularContent[0]);
+  const [search, setSearch] = useState("");
   const slidesCount = mostPopularContent.length;
-  const slidesPerView = Math.min(slidesCount, 5);
+  const slidesPerView = Math.min(slidesCount);
 
   const getRealIndex = (index, length) => {
     if (index >= length) {
@@ -26,6 +27,18 @@ const SliderBlock = () => {
     const realIndex = getRealIndex(id.realIndex, slidesCount);
     setCurrentSlide(mostPopularContent[realIndex]);
   };
+
+  const searchAndFilteredSlides = useMemo(() => {
+    if(search){
+      return mostPopularContent.filter((item) => {
+        return item.title.toLowerCase().includes(search.toLowerCase());
+      });
+    }else {
+      return mostPopularContent
+    }
+  }, [search, mostPopularContent]);
+
+  console.log(searchAndFilteredSlides);
 
   return (
     <div className={s.slider}>
@@ -43,7 +56,12 @@ const SliderBlock = () => {
 
       <div className={s.slider__item_second}>
         <h1 className={s.slider__title}>Most Popular</h1>
-        <input className={s.slider___search} placeholder="Car search" />
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className={s.slider___search}
+          placeholder="Car search"
+        />
         <Swiper
           className="my-slider"
           slidesPerView={slidesPerView}
@@ -52,34 +70,34 @@ const SliderBlock = () => {
           loop={true}
           slidesPerGroup={1}
           initialSlide={0}
-          loopedSlides={4}
+          loopedSlides={searchAndFilteredSlides.length - 1}
           spaceBetween={50}
           simulateTouch={false}
           grabCursor={false}
           navigation={true}
-          onSlideChange={initialSlideContent}
+          onSlideChangeTransitionEnd={initialSlideContent}
           scrollbar={{
             hide: false,
           }}
           direction={"vertical"}
           modules={[Navigation, Scrollbar]}
         >
-          {mostPopularContent.map((item, index) => {
+          {searchAndFilteredSlides.map((item, index) => {
             return (
               <SwiperSlide
                 className="my-slide__item"
-                key={`${item.id} + ${index}`}
+                key={item.id}
               >
                 <h1>{item.title}</h1>
                 <p>{item.type}</p>
               </SwiperSlide>
             );
           })}
-          {mostPopularContent.map((item, index) => {
+          {searchAndFilteredSlides.map((item, index) => {
             return (
               <SwiperSlide
                 className="my-slide__item"
-                key={`${item.id} + ${index}`}
+                key={item.id}
               >
                 <h1>{item.title}</h1>
                 <p>{item.type}</p>
