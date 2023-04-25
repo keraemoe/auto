@@ -61,7 +61,7 @@
       background-color: #2B2B2B;
     }
     button:hover{
-      
+
     }
   }
 }
@@ -124,7 +124,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 770px) {
   .AskUsAnything {
     height: 640px;
     border: none;
@@ -159,6 +159,44 @@
         font-weight: 600;
         font-size: 18px;
         line-height: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .AskUsAnything {
+    height: 580px;
+    .map {
+      display: none;
+    }
+    .right_block {
+      text-align: center;
+      padding-left: 0px;
+      margin: auto;
+      h1 {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        padding-bottom: 20px;
+      }
+      .big_input {
+        width: 320px;
+        height: 140px;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 90px;
+        margin-bottom: 12px;
+      }
+      button {
+        height: 62px;
+        width: 320px;
+        font-family: "Stolzl";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 50px;
       }
     }
   }
