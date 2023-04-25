@@ -122,10 +122,11 @@
 
 @media screen and (max-width: 768px) {
   .AskUsAnything {
-    height: 600px;
+    height: 640px;
+    border: none;
     .map {
       width: 400px;
-      height: 480px;
+      height: 600px;
     }
     .right_block {
       padding-left: 20px;
@@ -161,7 +162,7 @@
 
 @media screen and (max-width: 425px) {
   .AskUsAnything {
-    height: 480px;
+    height: 620px;
     .map {
       display: none;
     }
@@ -199,6 +200,7 @@
 
 @media screen and (max-width: 375px) {
   .AskUsAnything {
+    height: 600px;
     .right_block {
       padding-left: 10px;
       .big_input {
@@ -213,6 +215,7 @@
 
 @media screen and (max-width: 320px) {
   .AskUsAnything {
+    height: 600px;
     .right_block {
       padding-left: 5px;
       .big_input {
@@ -220,6 +223,7 @@
       }
       button {
         width: 310px;
+
       }
     }
   }
