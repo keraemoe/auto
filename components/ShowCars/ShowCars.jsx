@@ -124,7 +124,7 @@ const ShowCars = () => {
         centered
         open={open}
         width={1000}
-		style={{ backgroundColor: ' #161516' }}
+		className="modalStyle"
       >
         {cars.map((item) => {
           return <ShowCarsCardForModal key={item.id} img={item.img} title={item.title}/>;
