@@ -1,22 +1,23 @@
-﻿import React, { useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
 
 import CustomSelect from "../CustomSelect/CustomSelect";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Logo from "../Logo/Logo";
+import NavBurgerMenu from "../NavBurgerMenu/NavBurgerMenu";
 
 const optionsCity = [
-  { id: 1, value: "one", label: "Dubai" },
-  { id: 2, value: "two", label: "Moscow" },
-  { id: 3, value: "three", label: "Budapest" },
-  { id: 4, value: "four", label: "Wiesbaden" },
+  { id: 1, label: "Dubai" },
+  { id: 2, label: "Moscow" },
+  { id: 3, label: "Budapest" },
+  { id: 4, label: "Wiesbaden" },
 ];
 
 const optionsLanguage = [
-  { id: 5, value: "five", label: "ENG" },
-  { id: 6, value: "six", label: "RUS" },
-  { id: 7, value: "seven", label: "KGZ" },
-  { id: 8, value: "eigth", label: "XZ" },
+  { id: 5, label: "ENG" },
+  { id: 6, label: "RUS" },
+  { id: 7, label: "KGZ" },
+  { id: 8, label: "XZ" },
 ];
 
 const Header = () => {
@@ -33,6 +34,7 @@ const Header = () => {
     setOptionsCityState(value);
   };
 
+  // ===================================================
   // Eng
   const [optionsLanguageState, setOptionsLanguageState] = useState(
     optionsLanguage[0].label
@@ -45,27 +47,49 @@ const Header = () => {
     setOptionsLanguageState(value);
   };
 
+  // ===================================================
+  // Проверочки когда два селекта одновременно открыты
+  // Проверка на первый селект
+  useEffect(() => {
+    if (cityOpen === true && languageOpen === true) {
+      setLanguageOpen(!languageOpen);
+    }
+  }, [cityOpen]);
+
+  // Проверка на второй селект
+  useEffect(() => {
+    if (cityOpen === true && languageOpen === true) {
+      setCityOpen(!cityOpen);
+    }
+  }, [languageOpen]);
+
+  // --------------------------------------------------------
+  // Состояние - навигационного бургер меню
+  const [nav, setNav] = useState(false);
+
   return (
     <header className={s.header}>
-      <nav className={s.header_nav}>
-        <ul className={s.left_ul}>
-          <BurgerMenu />
-          <li>
+      <nav className={s.header__nav}>
+        <BurgerMenu setNav={setNav} nav={nav} />
+        <NavBurgerMenu nav={nav} />
+
+        <ul className={s.header__ul}>
+          <li className={s.header__li}>
             <a href="#">Car List</a>
           </li>
-          <li>
+          <li className={s.header__li}>
             <a href="#">About Us</a>
           </li>
-          <li>
+          <li className={s.header__li}>
             <a href="#">Contacts</a>
           </li>
         </ul>
-        {/* left_ul */}
+        {/* header__ul */}
 
-        <Logo />
+        <Logo classNameTitlesOfHeader={s.header__title} />
 
-        <ul className={s.right_ul}>
-          <li className={s.right_ul_number}>+971 58 590 7875</li>
+        <ul className={s.header__ul_last}>
+          <li className={s.header_number}>+971 58 590 7875</li>
 
           <CustomSelect
             options={optionsCity}
@@ -86,7 +110,6 @@ const Header = () => {
       </nav>
       {/* nav */}
     </header>
-    // header
   );
 };
 

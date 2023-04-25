@@ -1,10 +1,11 @@
 import React from 'react';
 import s from "./SocialNetwork.module.scss";
+import cn from "classnames"
 
-const SocialNetwork = () => {
+const SocialNetwork = ({classNameHero}) => {
     return (
-        <div className={s.hero_social_network}>
-        <div className={s.telegram}>
+        <div className={cn(s.social, classNameHero)}>
+        <div className={s.social_telegram}>
             <svg
               viewBox="0 0 28 28"
               fill="none"
@@ -16,7 +17,7 @@ const SocialNetwork = () => {
               />
             </svg>
           </div>
-          <div className={s.whatsapp}>
+          <div className={s.social_whatsapp}>
             <svg
               viewBox="0 0 26 26"
               fill="none"
@@ -29,7 +30,7 @@ const SocialNetwork = () => {
             </svg>
           </div>
         </div>
-    //    hero_social_network
+    //    social
     );
 };
 

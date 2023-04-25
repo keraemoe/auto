@@ -1,8 +1,8 @@
-.customized_select {
+.mySelect {
   position: relative;
   color: #ffffff;
 
-  &.is_open {
+  &.open {
     .select__placeholder::after {
       content: "\f077";
       color: #33b7bc;
@@ -12,7 +12,7 @@
       display: block;
     }
   }
-  // is_open
+  // open
 
   .select__placeholder {
     user-select: none;
@@ -37,7 +37,6 @@
   .select__list {
     width: 188px;
     display: none;
-    z-index: 100;
     position: absolute;
     top: 35px;
     right: 40px;
@@ -50,7 +49,7 @@
     margin: 0;
     padding: 0 25px;
     box-sizing: border-box;
-    .select__list__item {
+    .select__item {
       border-bottom: 1px solid #323232;
       font-family: "Stolzl", sans-serif;
       font-style: normal;
@@ -66,14 +65,14 @@
         border: none;
       }
     }
-    // select__list__item
+    // select__item
   }
   // select__list
 }
-// customized_select
+// mySelect
 
 @media screen and (max-width: 1250px) {
-  .customized_select {
+  .mySelect {
     .select__placeholder {
       font-size: 14px;
 
@@ -89,19 +88,19 @@
       top: 35px;
       right: 40px;
       padding: 0 25px;
-      .select__list__item {
+      .select__item {
         font-size: 13px;
         padding: 15px 0;
       }
-      // select__list__item
+      // select__item
     }
     // select__list
   }
-  // customized_select
+  // mySelect
 }
 
 @media screen and (max-width: 1024px) {
-  .customized_select {
+  .mySelect {
     .select__placeholder {
       font-size: 13px;
 
@@ -117,19 +116,19 @@
       top: 35px;
       right: 40px;
       padding: 0 20px;
-      .select__list__item {
+      .select__item {
         font-size: 12px;
         padding: 10px 0;
       }
-      // select__list__item
+      // select__item
     }
     // select__list
   }
-  // customized_select
+  // mySelect
 }
 
 @media screen and (max-width: 768px) {
-  .customized_select {
+  .mySelect {
     .select__placeholder {
       font-size: 13px;
 
@@ -145,24 +144,24 @@
       top: 35px;
       right: 40px;
       padding: 0 20px;
-      .select__list__item {
+      .select__item {
         font-size: 11px;
         padding: 9px 0;
       }
-      // select__list__item
+      // select__item
     }
     // select__list
   }
-  // customized_select
+  // mySelect
 
-  .customized_select:nth-child(2) {
+  .mySelect:nth-child(2) {
     display: none;
   }
+  
 }
 
-
 @media screen and (max-width: 425px) {
-  .customized_select {
+  .mySelect {
     .select__placeholder {
       font-size: 13px;
 
@@ -178,13 +177,13 @@
       top: 35px;
       right: 40px;
       padding: 0 15px;
-      .select__list__item {
+      .select__item {
         font-size: 9px;
         padding: 7px 0;
       }
-      // select__list__item
+      // select__item
     }
     // select__list
   }
-  // customized_select
+  // mySelect
 }

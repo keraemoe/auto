@@ -1,10 +1,7 @@
-.hero_social_network {
+.social {
   display: flex;
   gap: 20px;
-  position: absolute;
-  right: 60px;
-  bottom: 60px;
-  .telegram {
+  .social_telegram {
     width: 54px;
     height: 54px;
     display: flex;
@@ -18,7 +15,7 @@
     }
   }
 
-  .whatsapp {
+  .social_whatsapp {
     width: 54px;
     height: 54px;
     display: flex;
@@ -32,14 +29,13 @@
     }
   }
 }
-// hero_social_network
+// social
 
 @media screen and (max-width: 1440px) {
-  .hero_social_network {
+  .social {
     gap: 15px;
-    right: 40px;
-    bottom: 40px;
-    .telegram {
+   
+    .social_telegram {
       width: 44px;
       height: 44px;
       svg {
@@ -47,7 +43,7 @@
       }
     }
 
-    .whatsapp {
+    .social_whatsapp {
       width: 44px;
       height: 44px;
       svg {
@@ -55,16 +51,15 @@
       }
     }
   }
-  // hero_social_network
+  // social
 }
 
 @media screen and (max-width: 1024px) {
   // hero_title
-  .hero_social_network {
+  .social {
     gap: 15px;
-    right: 40px;
-    bottom: 40px;
-    .telegram {
+
+    .social_telegram {
       width: 44px;
       height: 44px;
       svg {
@@ -72,7 +67,7 @@
       }
     }
 
-    .whatsapp {
+    .social_whatsapp {
       width: 44px;
       height: 44px;
       svg {
@@ -83,11 +78,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .hero_social_network {
+  .social {
     gap: 15px;
-    right: 20px;
-    bottom: 20px;
-    .telegram {
+    
+    .social_telegram {
       width: 40px;
       height: 40px;
       svg {
@@ -95,7 +89,7 @@
       }
     }
 
-    .whatsapp {
+    .social_whatsapp {
       width: 40px;
       height: 40px;
       svg {
@@ -103,5 +97,5 @@
       }
     }
   }
-  // hero_social_network
+  // social
 }

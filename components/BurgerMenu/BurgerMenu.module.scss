@@ -1,87 +1,129 @@
-.burger_menu {
-    width: 81px;
-    height: 40px;
+.container {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  .burgerMenu {
+    // width: 100px;
+    height: 11px;
     position: relative;
-    cursor: pointer;
-    
+
     span {
       width: 61px;
       height: 2px;
-      position: absolute;
+      position:  absolute;
       background-color: #fefefe;
-      transition: all 0.2s ease;
+      transition: 0.2s;
     }
+
+    span:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #fefefe;
+      transform-origin: bottom left;
+      -ms-transform: skew(-65deg);
+      -webkit-transform: skew(-65deg);
+      transform: skew(-65deg);
+    }
+
     span:nth-of-type(1) {
-      bottom: 14.5px;
+      top: 0;
       right: 0;
     }
+
     span:nth-of-type(2) {
-      top: 14.5px;
+      bottom: 0;
       left: 0;
     }
 
-    &:hover span:nth-of-type(1) {
-      right: 10px;
-      transition: all 0.2s ease;
-    }
-
-    &:hover span:nth-of-type(2) {
-      left: 10px;
-      transition: all 0.2s ease;
-    }
   }
   // burger_menu
 
-  @media screen and (max-width: 1024px) {
-    .burger_menu {
-      width: 71px;
-      height: 40px;
-      span {
-        width: 51px;
-      }
-      span:nth-of-type(1) {
-        bottom: 14.5px;
-        right: 0;
-      }
-      span:nth-of-type(2) {
-        top: 14.5px;
-        left: 0;
-      }
-  
-      &:hover span:nth-of-type(1) {
-        right: 10px;
-      }
-  
-      &:hover span:nth-of-type(2) {
-        left: 10px;
-      }
-    }
-    // burger_menu
+  &:hover .burgerMenu span::after {
+    opacity: 0;
+    transition: 0.2s;
   }
 
-  @media screen and (max-width: 768px) {
-    .burger_menu {
-      width: 61px;
-      height: 40px;
+  &:hover .burgerMenu span:nth-of-type(1) {
+    right: 19.50px;
+    transition: 0.2s;
+  }
+
+  &:hover .burgerMenu span:nth-of-type(2) {
+    left: 19.50px;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    position: absolute;
+    z-index: 1000;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    .burgerMenu {
+      width: 100px;
+      height: 11px;
+      position: relative;
+  
       span {
-        width: 41px;
+        width: 61px;
+        height: 2px;
+        position:  absolute;
+        background-color: #fefefe;
+        transition: 0.2s;
       }
+  
+      span:after {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #fefefe;
+        transform-origin: bottom left;
+        -ms-transform: skew(-65deg);
+        -webkit-transform: skew(-65deg);
+        transform: skew(-65deg);
+      }
+  
       span:nth-of-type(1) {
-        bottom: 14.5px;
+        top: 0;
         right: 0;
       }
+  
       span:nth-of-type(2) {
-        top: 14.5px;
+        bottom: 0;
         left: 0;
       }
   
-      &:hover span:nth-of-type(1) {
-        right: 10px;
-      }
-  
-      &:hover span:nth-of-type(2) {
-        left: 10px;
-      }
     }
     // burger_menu
+  
+    &:hover .burgerMenu span::after {
+      opacity: 0;
+      transition: 0.2s;
+    }
+  
+    &:hover .burgerMenu span:nth-of-type(1) {
+      right: 19.50px;
+      transition: 0.2s;
+    }
+  
+    &:hover .burgerMenu span:nth-of-type(2) {
+      left: 19.50px;
+      transition: 0.2s;
+    }
   }
+}
+
+

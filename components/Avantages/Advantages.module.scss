@@ -1,0 +1,24 @@
+﻿.advantages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-family: "Stolzl";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 100px;
+    line-height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+  .cars_catalog {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 121px;
+    padding-bottom: 260px;
+  }
+}
