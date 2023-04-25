@@ -72,39 +72,94 @@ const ShowCars = () => {
 	};
 
 	return (
-			<section className={s.showcars_section}>
-				<div className={s.cars_filter}>
-					<p className={classNames(s.cars_filter_title, {
+		<section className={s.showcars_section}>
+			<div className={s.cars_filter}>
+				<motion.p
+					initial="hidden"
+					transition={{ duration: 0.1 }}
+					whileInView="visible"
+					variants={
+						{
+							hidden: { scale: 0 },
+							visible: { scale: 1 }
+
+						}
+					}
+					className={classNames(s.cars_filter_title, {
 						[s.cars_filter_title_active]: selectedFilter === 'special',
 					})}
-						onClick={() => handleFilterClick('special') || sortByOffer()}>
-						Special Offer</p>
-					<p className={classNames(s.cars_filter_title, {
+					onClick={() => handleFilterClick('special') || sortByOffer()}>
+					Special Offer</motion.p>
+				<motion.p
+					initial="hidden"
+					transition={{ duration: 0.2 }}
+					whileInView="visible"
+					variants={
+						{
+							hidden: { scale: 0 },
+							visible: { scale: 1 }
+
+						}
+					}
+					className={classNames(s.cars_filter_title, {
 						[s.cars_filter_title_active]: selectedFilter === 'new',
 					})}
-						onClick={() => handleFilterClick('new') || filterCarsByDate()}>New car</p>
-					<p className={classNames(s.cars_filter_title, {
+					onClick={() => handleFilterClick('new') || filterCarsByDate()}>New car</motion.p>
+				<motion.p
+					initial="hidden"
+					transition={{ duration: 0.3 }}
+					whileInView="visible"
+					variants={
+						{
+							hidden: { scale: 0 },
+							visible: { scale: 1 }
+
+						}
+					}
+					className={classNames(s.cars_filter_title, {
 						[s.cars_filter_title_active]: selectedFilter === 'popular',
 					})}
-						onClick={() => handleFilterClick('popular') || sortByRented()}>
-						Most popular</p>
-					<p className={classNames(s.cars_filter_title, {
+					onClick={() => handleFilterClick('popular') || sortByRented()}>
+					Most popular</motion.p>
+				<motion.p
+					initial="hidden"
+					transition={{ duration: 0.4 }}
+					whileInView="visible"
+					variants={
+						{
+							hidden: { scale: 0 },
+							visible: { scale: 1 }
+
+						}
+					}
+					className={classNames(s.cars_filter_title, {
 						[s.cars_filter_title_active]: selectedFilter === 'daily',
 					})}
-						onClick={() => handleFilterClick('daily') || sortByDaily()}>
-						Daily</p>
-				</div>
-				<div className={s.cars_catalog}>
-					{cars.map((car => {
-						return <ShowCarsCard key={car.id} img={car.img} title={car.title} />
-					}))}
-				</div>
-				<div className={s.cars_catalog_btn}>
-					<button>
-						View all
-					</button>
-				</div>
-			</section>
+					onClick={() => handleFilterClick('daily') || sortByDaily()}>
+					Daily</motion.p>
+			</div>
+			<div className={s.cars_catalog}>
+				{cars.map((car => {
+					return <ShowCarsCard key={car.id} img={car.img} title={car.title} />
+				}))}
+			</div>
+			<motion.div
+				initial="hidden"
+				transition={{ duration: 0.7 }}
+				whileInView="visible"
+				variants={
+					{
+						hidden: { scale: 0 },
+						visible: { scale: 1 }
+
+					}
+				}
+				className={s.cars_catalog_btn}>
+				<button>
+					View all
+				</button>
+			</motion.div>
+		</section>
 	);
 };
 
