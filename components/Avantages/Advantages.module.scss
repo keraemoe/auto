@@ -14,23 +14,11 @@
     text-align: center;
     color: #ffffff;
   }
-  .content {
+  .cars_catalog {
     width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 260px;
     padding-top: 121px;
-    .up {
-      opacity: 0.08;
-      border: 1px solid gray;
-      transition: 0.5s;
-    }
-    .up:hover {
-      opacity: 1;
-      transition: 0.5s;
-    }
+    padding-bottom: 260px;
   }
 }
