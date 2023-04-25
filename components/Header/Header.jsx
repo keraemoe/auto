@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
+import { motion } from 'framer-motion'
 
 import CustomSelect from "../CustomSelect/CustomSelect";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
@@ -74,22 +75,54 @@ const Header = () => {
         <NavBurgerMenu nav={nav} />
 
         <ul className={s.header__ul}>
-          <li className={s.header__li}>
+          <motion.li
+            initial="hidden"
+            transition={{ duration: 0.7 }}
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0 },
+              visible: { scale: 1 },
+            }}
+            className={s.header__li}>
             <a href="#">Car List</a>
-          </li>
-          <li className={s.header__li}>
+          </motion.li>
+          <motion.li
+            initial="hidden"
+            transition={{ duration: 0.7 }}
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0 },
+              visible: { scale: 1 },
+            }}
+            className={s.header__li}>
             <a href="#">About Us</a>
-          </li>
-          <li className={s.header__li}>
+          </motion.li>
+          <motion.li
+            initial="hidden"
+            transition={{ duration: 0.7 }}
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0 },
+              visible: { scale: 1 },
+            }}
+            className={s.header__li}>
             <a href="#">Contacts</a>
-          </li>
+          </motion.li>
         </ul>
         {/* header__ul */}
 
         <Logo classNameTitlesOfHeader={s.header__title} />
 
         <ul className={s.header__ul_last}>
-          <li className={s.header_number}>+971 58 590 7875</li>
+          <motion.li
+            initial="hidden"
+            transition={{ duration: 0.7 }}
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0 },
+              visible: { scale: 1 },
+            }}
+            className={s.header_number}>+971 58 590 7875</motion.li>
 
           <CustomSelect
             options={optionsCity}

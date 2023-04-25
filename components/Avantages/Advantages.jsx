@@ -2,6 +2,7 @@
 import s from './Advantages.module.scss'
 import AdvantagesCard from '../AdvantagesCard/AdvantagesCard';
 import adv from '../../public/adv.png'
+import { motion } from 'framer-motion'
 
 const cars = [
     {
@@ -40,7 +41,15 @@ const Advantages = () => {
     return (
         <>
             <div className={s.advantages}>
-                <h1>Advantages</h1>
+                <motion.h1
+                    initial="hidden"
+                    transition={{ duration: 0.7 }}
+                    whileInView="visible"
+                    variants={{
+                        hidden: { scale: 0 },
+                        visible: { scale: 1 },
+                    }}
+                >Advantages</motion.h1>
                 <div className={s.cars_catalog}>
                     {cars.map((car => {
                         return <AdvantagesCard key={car.id} img={car.img} title={car.title} />

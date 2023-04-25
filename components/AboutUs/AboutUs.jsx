@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import s from './AboutUs.module.scss'
+import { motion } from 'framer-motion'
 import Image from 'next/image';
 import backImg from '../../public/backgroundAboutUS.png'
 import leftQuotes from '../../public/leftquotes.png'
@@ -27,6 +28,7 @@ const AboutUs = () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [ref]);
+
 	return (
 		<div style={{ width: '100%', background: '#161516' }}>
 			<section className={s.aboutus_section} ref={ref}>
@@ -35,14 +37,29 @@ const AboutUs = () => {
 				<div className={s.background_gradient_right}></div>
 				{inView && (
 					<>
-
 						<div className={s.aboutus_section_block}>
-							<div className={s.aboutus_section_block_header}>
+							<motion.div
+								initial="hidden"
+								transition={{ duration: 0.7 }}
+								whileInView="visible"
+								variants={{
+									hidden: { scale: 0 },
+									visible: { scale: 1 },
+								}}
+								className={s.aboutus_section_block_header}>
 								<h1>About Us</h1>
-							</div>
+							</motion.div>
 							<div className={s.aboutus_section_block_main}>
 								<div className={s.aboutus_section_block_main_bloks}>
-									<div className={s.aboutus_section_block_main_blok}>
+									<motion.div
+										initial="hidden"
+										transition={{ duration: 0.5 }}
+										whileInView="visible"
+										variants={{
+											hidden: { scale: 0 },
+											visible: { scale: 1 },
+										}}
+										className={s.aboutus_section_block_main_blok}>
 										<div style={{ display: 'flex' }}>
 											<div className={s.background_text}>
 												<p className={`${s.num} ${s.num1}`}></p>
@@ -52,8 +69,16 @@ const AboutUs = () => {
 											</div>
 										</div>
 										<h3>We've come a long way from a 2-people <br /> company to winning at Webby's. </h3>
-									</div>
-									<div className={s.aboutus_section_block_main_blok}>
+									</motion.div>
+									<motion.div
+										initial="hidden"
+										transition={{ duration: 0.6 }}
+										whileInView="visible"
+										variants={{
+											hidden: { scale: 0 },
+											visible: { scale: 1 },
+										}}
+										className={s.aboutus_section_block_main_blok}>
 										<div style={{ display: 'flex' }}>
 											<div className={s.background_text}>
 												<p className={`${s.num} ${s.num2}`}></p>
@@ -63,8 +88,16 @@ const AboutUs = () => {
 											</div>
 										</div>
 										<h3>We've come a long way from a 2-people <br /> company to winning at Webby's.  </h3>
-									</div>
-									<div className={s.aboutus_section_block_main_blok}>
+									</motion.div>
+									<motion.div
+										initial="hidden"
+										transition={{ duration: 0.7 }}
+										whileInView="visible"
+										variants={{
+											hidden: { scale: 0 },
+											visible: { scale: 1 },
+										}}
+										className={s.aboutus_section_block_main_blok}>
 										<div style={{ display: 'flex' }}>
 											<div className={s.background_text}>
 												<p className={`${s.num} ${s.num3}`}></p>
@@ -74,11 +107,19 @@ const AboutUs = () => {
 											</div>
 										</div>
 										<h3>We've come a long way from a 2-people <br /> company to winning at Webby's.  </h3>
-									</div>
+									</motion.div>
 								</div>
 							</div>
-							<div className={s.aboutus_section_block_footer}>
-								<Image className={s.left_quotes} src={leftQuotes} />
+							<motion.div
+								initial="hidden"
+								transition={{ duration: 0.7 }}
+								whileInView="visible"
+								variants={{
+									hidden: { scale: 0 },
+									visible: { scale: 1 },
+								}}
+								className={s.aboutus_section_block_footer}>
+								<Image className={s.left_quotes} src={leftQuotes} alt='quotes_img' />
 								<div>
 									<p>I’m with cars for over 18 years. My auto passion <br /> and attention to details will make your <br /> experience with us second to none. Guaranteed.</p>
 									<div className={s.quote}>
@@ -86,16 +127,22 @@ const AboutUs = () => {
 										<span> CEO Trinity car rental boutique</span>
 									</div>
 								</div>
-								<Image className={s.right_quotes} src={rightQuotes} />
-							</div>
+								<Image className={s.right_quotes} src={rightQuotes} alt='quotes_img' />
+							</motion.div>
 						</div>
-						<div className={s.aboutus_section_person}>
+						<motion.div
+							initial="hidden"
+							transition={{ duration: 0.7 }}
+							whileInView="visible"
+							variants={{
+								hidden: { scale: 0 },
+								visible: { scale: 1 },
+							}}
+							className={s.aboutus_section_person}>
 							<Image src={manCars} alt='manCars' />
-						</div>
+						</motion.div>
 					</>
-
 				)}
-
 			</section>
 		</div>
 

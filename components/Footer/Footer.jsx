@@ -18,6 +18,7 @@ import tiktok from '../../public/tiktok.png'
 import youtube from '../../public/youtube.png'
 import SocialNetwork from '../SocialNetwork/SocialNetwork';
 import axios from 'axios';
+import { motion } from 'framer-motion'
 
 
 const Footer = () => {
