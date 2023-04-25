@@ -14,61 +14,11 @@
     text-align: center;
     color: #ffffff;
   }
-  .content {
-    padding-bottom: 260px;
-    padding-top: 121px;
+  .cars_catalog {
     width: 100%;
-    .up {
-      .container {
-        position: relative;
-        h1 {
-          position: absolute;
-          font-family: "Stolzl";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 40px;
-          color: #ffffff;
-          z-index: 1;
-        }
-      }
-      img {
-        opacity: 0.08;
-        border: 1px solid rgb(43, 42, 42);
-        transition: 0.5s;
-        width: 639px;
-        height: 459px;
-      }
-    }
-    img:hover {
-      opacity: 1;
-      transition: 0.5s;
-    }
-    .down {
-      .container {
-        position: relative;
-        h1 {
-          position: absolute;
-          z-index: 1;
-          font-family: "Stolzl";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 40px;
-          color: #ffffff;
-        }
-      }
-      img {
-        opacity: 0.08;
-        border: 1px solid rgb(43, 42, 42);
-        transition: 0.5s;
-        width: 639px;
-        height: 459px;
-      }
-    }
-    img:hover {
-      opacity: 1;
-      transition: 0.5s;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 121px;
+    padding-bottom: 260px;
   }
 }
