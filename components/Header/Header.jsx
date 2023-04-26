@@ -84,7 +84,7 @@ const Header = () => {
               visible: { scale: 1 },
             }}
             className={s.header__li}>
-            <a href="#">Car List</a>
+            <a href="#carList">Car List</a>
           </motion.li>
           <motion.li
             initial="hidden"
@@ -95,7 +95,7 @@ const Header = () => {
               visible: { scale: 1 },
             }}
             className={s.header__li}>
-            <a href="#">About Us</a>
+            <a href="#aboutUs">About Us</a>
           </motion.li>
           <motion.li
             initial="hidden"
@@ -106,7 +106,7 @@ const Header = () => {
               visible: { scale: 1 },
             }}
             className={s.header__li}>
-            <a href="#">Contacts</a>
+            <a href="#contacts">Contacts</a>
           </motion.li>
         </ul>
         {/* header__ul */}

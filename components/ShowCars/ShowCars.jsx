@@ -74,7 +74,7 @@ const ShowCars = () => {
 	};
 
   return (
-    <section className={s.showcars_section}>
+    <section className={s.showcars_section} id="carList">
       <div className={s.cars_filter}>
         <p
           className={classNames(s.cars_filter_title, {

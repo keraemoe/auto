@@ -8,6 +8,7 @@ import Review from '@/components/Review/Review'
 
 import Head from 'next/head'
 import ShowCars from '@/components/ShowCars/ShowCars'
+import Footer from '@/components/Footer/Footer'
 
 export default function Home() {
   return (

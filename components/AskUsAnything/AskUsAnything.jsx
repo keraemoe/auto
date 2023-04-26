@@ -7,7 +7,7 @@ const AskUsAnything = () => {
 
   return (
 
-    <section className={s.AskUsAnything}>
+    <section className={s.AskUsAnything}  id="contacts">
       <motion.iframe
         initial="hidden"
         transition={{ duration: 0.5 }}
