@@ -54,70 +54,118 @@ const Footer = () => {
     ]
 
     return (
-            <footer className={s.footer}>
-                <div className={s.footer_columns}>
-                    <div className={s.footer_column_left}>
-                        <div className={s.footer_column_left_block}>
-                            <h1>For Customers</h1>
-                            <li><a>About Us</a></li>
-                            <li><a>Conditions</a></li>
-                            <li><a>Testimonials</a></li>
-                            <li><a>Articles</a></li>
-                            <li><a>Contacts</a></li>
+        <footer className={s.footer}>
+            <div className={s.footer_columns}>
+                <div className={s.footer_column_left}>
+                    <motion.div
+                        initial="hidden"
+                        transition={{ duration: 0.5 }}
+                        whileInView="visible"
+                        variants={{
+                            hidden: { scale: 0 },
+                            visible: { scale: 1 },
+                        }}
+                        className={s.footer_column_left_block}>
+                        <h1>For Customers</h1>
+                        <li><a>About Us</a></li>
+                        <li><a>Conditions</a></li>
+                        <li><a>Testimonials</a></li>
+                        <li><a>Articles</a></li>
+                        <li><a>Contacts</a></li>
+                    </motion.div>
+                    <motion.div
+                        initial="hidden"
+                        transition={{ duration: 0.6 }}
+                        whileInView="visible"
+                        variants={{
+                            hidden: { scale: 0 },
+                            visible: { scale: 1 },
+                        }}
+                        className={s.footer_column_left_block}>
+                        <h1>Car List</h1>
+                        <li><a>SUVs</a></li>
+                        <li><a>Convertibles</a></li>
+                        <li><a>Sports Cars</a></li>
+                        <li><a>Premium</a></li>
+                        <li><a>Coupe</a></li>
+                    </motion.div>
+                    <motion.div
+                        initial="hidden"
+                        transition={{ duration: 0.7 }}
+                        whileInView="visible"
+                        variants={{
+                            hidden: { scale: 0 },
+                            visible: { scale: 1 },
+                        }}
+                        className={s.footer_column_left_block}>
+                        <h1>Service</h1>
+                        <li><a>Car List</a></li>
+                        <li><a>Yacht list</a></li>
+                        <li><a>Chauffeur</a></li>
+                    </motion.div>
+                </div>
+                <motion.div
+                    initial="hidden"
+                    transition={{ duration: 0.7 }}
+                    whileInView="visible"
+                    variants={{
+                        hidden: { scale: 0 },
+                        visible: { scale: 1 },
+                    }}
+                    className={s.footer_column_right}>
+                    <div className={s.footer_column_right_block}>
+                        <div className={s.footer_column_right_block_header}>
+                            <p>+971 58 590 7875</p>
+                            <SocialNetwork className={s.molox} style={{ height: '20px', width: '20px' }} />
                         </div>
-                        <div className={s.footer_column_left_block}>
-                            <h1>Car List</h1>
-                            <li><a>SUVs</a></li>
-                            <li><a>Convertibles</a></li>
-                            <li><a>Sports Cars</a></li>
-                            <li><a>Premium</a></li>
-                            <li><a>Coupe</a></li>
-                        </div>
-                        <div className={s.footer_column_left_block}>
-                            <h1>Service</h1>
-                            <li><a>Car List</a></li>
-                            <li><a>Yacht list</a></li>
-                            <li><a>Chauffeur</a></li>
-                        </div>
-                    </div>
-                    <div className={s.footer_column_right}>
-                        <div className={s.footer_column_right_block}>
-                            <div className={s.footer_column_right_block_header}>
-                                <p>+971 58 590 7875</p>
-                                <SocialNetwork className={s.molox} style={{ height: '20px', width: '20px' }} />
+                        <button className={s.footer_column_right_block_btn}>
+                            REQUEST A CALLBACK
+                        </button>
+                        <h4>24 4th St - Al Quoz - Al Quoz <br /> Industrial Area 3 - Dubai</h4>
+                        <form onSubmit={handleSubmit}>
+                            <div className={s.footer_column_right_block_input}>
+                                <input value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="email"
+                                    minLength={3}
+                                    placeholder='Write your E-mail'
+                                />
+                                <button onClick={() => console.log(email)}>Submit</button>
                             </div>
-                            <button className={s.footer_column_right_block_btn}>
-                                REQUEST A CALLBACK
-                            </button>
-                            <h4>24 4th St - Al Quoz - Al Quoz <br /> Industrial Area 3 - Dubai</h4>
-                            <form onSubmit={handleSubmit}>
-                                <div className={s.footer_column_right_block_input}>
-                                    <input value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        type="email"
-                                        minLength={3}
-                                        placeholder='Write your E-mail'
-                                    />
-                                    <button onClick={() => console.log(email)}>Submit</button>
-                                </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
+                </motion.div>
+            </div>
+            <motion.div
+                initial="hidden"
+                transition={{ duration: 0.7 }}
+                whileInView="visible"
+                variants={{
+                    hidden: { scale: 0 },
+                    visible: { scale: 1 },
+                }}
+                className={s.footer_payments}>
+                <FooterSlider FooterImgDate={FooterImgDate} />
+            </motion.div>
+            <motion.div
+                initial="hidden"
+                transition={{ duration: 0.7 }}
+                whileInView="visible"
+                variants={{
+                    hidden: { scale: 0 },
+                    visible: { scale: 1 },
+                }}
+                className={s.footer_info}>
+                <p>Privacy Policy</p>
+                <h4>©2023 TRINITY. All rights reserved</h4>
+                <div className={s.footer_info_imgs}>
+                    <Image src={facebook} alt='img_social'></Image>
+                    <Image src={tiktok} alt='img_social'></Image>
+                    <Image src={youtube} alt='img_social'></Image>
+                    <Image src={insta} alt='img_social'></Image>
                 </div>
-                <div className={s.footer_payments}>
-                    <FooterSlider FooterImgDate={FooterImgDate} />
-                </div>
-                <div className={s.footer_info}>
-                    <p>Privacy Policy</p>
-                    <h4>©2023 TRINITY. All rights reserved</h4>
-                    <div className={s.footer_info_imgs}>
-                        <Image src={facebook} alt='img_social'></Image>
-                        <Image src={tiktok} alt='img_social'></Image>
-                        <Image src={youtube} alt='img_social'></Image>
-                        <Image src={insta} alt='img_social'></Image>
-                    </div>
-                </div>
-            </footer>
+            </motion.div>
+        </footer>
     );
 };
 

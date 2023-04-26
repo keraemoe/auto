@@ -119,11 +119,19 @@ const Discount = () => {
 					<span>+</span>
 				</div>
 			</div>
-			<div className={s.discount_section_brands}>
+			<motion.div
+				initial="hidden"
+				transition={{ duration: 0.7 }}
+				whileInView="visible"
+				variants={{
+					hidden: { scale: 0 },
+					visible: { scale: 1 },
+				}}
+				className={s.discount_section_brands}>
 				<div className={s.marquee}>
 					<div className={s.track} id='marqueeTrack'>
 						<motion.div
-						 className={s.content}>
+							className={s.content}>
 							&nbsp;
 							<span>Lexus</span>
 							<span>Mercedes</span>
@@ -148,7 +156,7 @@ const Discount = () => {
 						</motion.div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };

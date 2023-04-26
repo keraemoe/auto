@@ -13,6 +13,7 @@ import slideTwo from "../../assets/Classic.png";
 import slideThree from "../../assets/Classic2.png";
 import slideFour from "../../assets/Audi.png";
 import Video from "yet-another-react-lightbox/plugins/video";
+import {motion} from 'framer-motion'
 const ReviewCard = () => {
   console.log(CarVideos);
 
@@ -30,7 +31,15 @@ const ReviewCard = () => {
   const [scrollToZoom, setScrollToZoom] = React.useState(false);
 
   return (
-    <div className={s.ReviewCard}>
+    <motion.div
+     initial="hidden"
+        transition={{ duration: 0.7 }}
+        whileInView="visible"
+        variants={{
+          hidden: { scale: 0 },
+          visible: { scale: 1 },
+        }}
+    className={s.ReviewCard}>
       <Swiper
         speed={2000}
         slidesPerView={4}
@@ -207,7 +216,7 @@ const ReviewCard = () => {
           },
         ]}
       />
-    </div>
+    </motion.div>
   );
 };
 
