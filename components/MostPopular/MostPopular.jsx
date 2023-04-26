@@ -11,8 +11,7 @@ import { mostPopularContent } from "@/constants/mostPopular";
 const SliderBlock = () => {
   const [currentSlide, setCurrentSlide] = useState(mostPopularContent[0]);
   const [search, setSearch] = useState("");
-  const slidesCount = mostPopularContent.length;
-  const slidesPerView = Math.min(slidesCount);
+  const slidesPerView = Math.min(mostPopularContent.length);
 
   const getRealIndex = (index, length) => {
     if (index >= length) {
@@ -37,8 +36,6 @@ const SliderBlock = () => {
       return mostPopularContent
     }
   }, [search, mostPopularContent]);
-
-  console.log(searchAndFilteredSlides);
 
   return (
     <div className={s.slider}>
