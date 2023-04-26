@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./CustomSelect.module.scss";
 import cn from "classnames";
+import { motion } from 'framer-motion'
 
 const CustomSelect = ({
   classNameNavBurgerMenu,
@@ -10,9 +11,16 @@ const CustomSelect = ({
   selectedOption,
   onClick,
 }) => {
-  
+
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      transition={{ duration: 0.7 }}
+      whileInView="visible"
+      variants={{
+        hidden: { scale: 0 },
+        visible: { scale: 1 },
+      }}
       className={
         isOpen ? cn(s.mySelect, s.open, classNameNavBurgerMenu) : cn(s.mySelect, classNameNavBurgerMenu)
       }
@@ -28,7 +36,7 @@ const CustomSelect = ({
       <ul className={s.select__list}>
         {options.map((option) => {
           return (
-             <li
+            <li
               className={s.select__item}
               key={option.id}
               onClick={() => onClick(option.label)}
@@ -40,7 +48,7 @@ const CustomSelect = ({
         })}
       </ul>
       {/* selectSelect__list */}
-    </div>
+    </motion.div>
     // select, open
   );
 };
