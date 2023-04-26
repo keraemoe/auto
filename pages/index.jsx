@@ -5,6 +5,7 @@ import AskUsAnything from '@/components/AskUsAnything/AskUsAnything'
 import Hero from '@/components/Hero/Hero'
 import SliderBlock from '@/components/MostPopular/MostPopular'
 import Review from '@/components/Review/Review'
+
 import Head from 'next/head'
 import ShowCars from '@/components/ShowCars/ShowCars'
 
@@ -19,11 +20,11 @@ export default function Home() {
         <script src="https://kit.fontawesome.com/1f5bacc93d.js" crossorigin="anonymous"></script>
       </Head>
       <Hero />
-      <SliderBlock />
+      {/* <SliderBlock /> */}
       <ShowCars />
       <AboutUs />
       <Review />
-      <Advantages />
+      {/* <Advantages /> */}
       <AskUsAnything />
       <Discount  />
     </>
