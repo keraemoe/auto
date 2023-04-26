@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./NavBurgerMenu.module.scss";
-
 import cn from "classnames";
+
 import SocialNetwork from "../SocialNetwork/SocialNetwork";
-import CustomSelect from "../CustomSelect/CustomSelect";
 import Logo from "../Logo/Logo";
 
 
