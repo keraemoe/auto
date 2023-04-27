@@ -22,7 +22,7 @@ const CustomSelect = ({
         visible: { scale: 1 },
       }}
       className={
-        isOpen ? cn(s.mySelect, s.open, classNameNavBurgerMenu) : cn(s.mySelect, classNameNavBurgerMenu)
+        isOpen ? cn(s.mySelect, s.show, classNameNavBurgerMenu) : cn(s.mySelect, classNameNavBurgerMenu)
       }
     >
       <span

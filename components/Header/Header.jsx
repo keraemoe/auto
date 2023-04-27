@@ -22,7 +22,7 @@ const optionsLanguage = [
 ];
 
 const Header = () => {
-  // dubai
+  // Dubai
   const [optionsCityState, setOptionsCityState] = useState(
     optionsCity[0].label
   );

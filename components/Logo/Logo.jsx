@@ -5,7 +5,8 @@ import { motion } from 'framer-motion'
 
 const Logo = ({ classNameTitlesOfHeader }) => {
   return (
-    <motion.div
+  <a href="#">
+      <motion.div
       initial="hidden"
       transition={{ duration: 0.7 }}
       whileInView="visible"
@@ -70,7 +71,8 @@ const Logo = ({ classNameTitlesOfHeader }) => {
         />
       </svg>
     </motion.div>
-    //   logo
+      {/* logo */}
+  </a>
 
   );
 };
