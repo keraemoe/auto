@@ -27,12 +27,12 @@
 
     .titleFirst {
       height: 24px;
-      margin-top: 20px;
+      margin-top: 19px;
     }
 
     .titleSecond {
       height: 8px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
   }
   // container
@@ -45,32 +45,15 @@
     }
 
     .titleFirst {
-      height: 16px;
-      margin-top: 12px;
+      height: 18px;
+      margin-top: 13px;
     }
 
     .titleSecond {
-      height: 6px;
-      margin-top: 6px;
+      height: 7px;
+      margin-top: 13px;
     }
   }
   // container
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    .logo {
-      height: 47px;
-    }
-  }
-  // container
-}
-
-@media screen and (max-width: 425px) {
-  .container {
-    .logo {
-      height: 47px;
-    }
-  }
-  // container
-}

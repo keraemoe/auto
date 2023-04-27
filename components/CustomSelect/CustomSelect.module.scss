@@ -2,18 +2,6 @@
   position: relative;
   color: #ffffff;
 
-  &.open {
-    .select__placeholder::after {
-      content: "\f077";
-      color: #33b7bc;
-    }
-
-    .select__list {
-      display: block;
-    }
-  }
-  // open
-
   .select__placeholder {
     user-select: none;
     cursor: pointer;
@@ -46,9 +34,7 @@
     user-select: none;
     list-style: none;
     color: #fff;
-    margin: 0;
     padding: 0 25px;
-    box-sizing: border-box;
     .select__item {
       border-bottom: 1px solid #323232;
       font-family: "Stolzl", sans-serif;
@@ -58,7 +44,7 @@
       cursor: pointer;
       padding: 15px 0;
       &:hover {
-        transition: 0.3s;
+        transition: 0.2s;
         color: #33b7bc !important;
       }
       &:last-child {
@@ -71,7 +57,19 @@
 }
 // mySelect
 
-@media screen and (max-width: 1250px) {
+.show {
+  .select__placeholder::after {
+    content: "\f077";
+    color: #33b7bc;
+  }
+
+  .select__list {
+    display: block;
+  }
+}
+// open
+
+@media screen and (max-width: 1440px) {
   .mySelect {
     .select__placeholder {
       font-size: 14px;
@@ -84,13 +82,13 @@
     // select__placeholder
 
     .select__list {
-      width: 180px;
+      width: 170px;
       top: 35px;
       right: 40px;
       padding: 0 25px;
       .select__item {
         font-size: 13px;
-        padding: 15px 0;
+        padding: 14px 0;
       }
       // select__item
     }
@@ -112,13 +110,13 @@
     // select__placeholder
 
     .select__list {
-      width: 130px;
+      width: 150px;
       top: 35px;
       right: 40px;
       padding: 0 20px;
       .select__item {
         font-size: 12px;
-        padding: 10px 0;
+        padding: 13px 0;
       }
       // select__item
     }
@@ -130,7 +128,7 @@
 @media screen and (max-width: 768px) {
   .mySelect {
     .select__placeholder {
-      font-size: 13px;
+      font-size: 12px;
 
       &::after {
         margin-left: 20px;
@@ -140,13 +138,13 @@
     // select__placeholder
 
     .select__list {
-      width: 120px;
-      top: 35px;
-      right: 40px;
+      width: 130px;
+      top: 30px;
+      right: 0;
       padding: 0 20px;
       .select__item {
         font-size: 11px;
-        padding: 9px 0;
+        padding: 12px 0;
       }
       // select__item
     }
@@ -157,13 +155,12 @@
   .mySelect:nth-child(2) {
     display: none;
   }
-  
 }
 
 @media screen and (max-width: 425px) {
   .mySelect {
     .select__placeholder {
-      font-size: 13px;
+      font-size: 11px;
 
       &::after {
         margin-left: 10px;
@@ -173,13 +170,11 @@
     // select__placeholder
 
     .select__list {
-      width: 90px;
-      top: 35px;
-      right: 40px;
+      width: 110px;
       padding: 0 15px;
       .select__item {
-        font-size: 9px;
-        padding: 7px 0;
+        font-size: 10px;
+        padding: 11px 0;
       }
       // select__item
     }
