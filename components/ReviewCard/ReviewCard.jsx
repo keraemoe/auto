@@ -180,7 +180,7 @@ const ReviewCard = () => {
           scrollToZoom,
         }}
       /> */}
-      <Lightbox
+     <Lightbox
         plugins={[Video]}
         open={open}
         close={() => setOpen(false)}

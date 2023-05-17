@@ -11,8 +11,9 @@ import { mostPopularContent } from "@/constants/mostPopular";
 const SliderBlock = () => {
   const [currentSlide, setCurrentSlide] = useState(mostPopularContent[0]);
   const [search, setSearch] = useState("");
+  const slidesCount = mostPopularContent.length;
   const slidesPerView = Math.min(mostPopularContent.length);
-
+ 
   const getRealIndex = (index, length) => {
     if (index >= length) {
       return index % length;
@@ -22,43 +23,37 @@ const SliderBlock = () => {
     return index;
   };
 
+  
   const initialSlideContent = (id) => {
     const realIndex = getRealIndex(id.realIndex, slidesCount);
     setCurrentSlide(mostPopularContent[realIndex]);
   };
 
-  const searchAndFilteredSlides = useMemo(() => {
-    if(search){
-      return mostPopularContent.filter((item) => {
-        return item.title.toLowerCase().includes(search.toLowerCase());
-      });
-    }else {
-      return mostPopularContent
-    }
-  }, [search, mostPopularContent]);
-
   return (
     <div className={s.slider}>
-      <div className={s.slider__item_first}>
-        <h1 className={s.sliderImage__title}>
-          {currentSlide.title} <br /> {currentSlide.type}
-        </h1>
-        <div className={s.sliderImage_text}>
-          <p>Rent is from aed</p>
-          <h1 className={s.sliderImage_price}>{currentSlide.price}</h1>
-          <p>per day</p>
+
+          <div className={s.slider__item_first}>
+    
+          <h1 className={s.sliderImage__title}>
+            {currentSlide.name} <br /> {currentSlide.type}
+          </h1>
+          <div className={s.sliderImage_text}>
+            <p>Rent is from aed</p>
+            <h1 className={s.sliderImage_price}>{currentSlide.price}</h1>
+            <p>per day</p>
+          </div>
+          <img src={currentSlide.image} alt="car" />
         </div>
-        <img src={currentSlide.image} alt="car" />
-      </div>
+
 
       <div className={s.slider__item_second}>
         <h1 className={s.slider__title}>Most Popular</h1>
-        <input
+        {/* <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className={s.slider___search}
           placeholder="Car search"
-        />
+        /> */}
         <Swiper
           className="my-slider"
           slidesPerView={slidesPerView}
@@ -67,7 +62,7 @@ const SliderBlock = () => {
           loop={true}
           slidesPerGroup={1}
           initialSlide={0}
-          loopedSlides={searchAndFilteredSlides.length - 1}
+          // loopedSlides={searchAndFilteredSlides.length - 1}
           spaceBetween={50}
           simulateTouch={false}
           grabCursor={false}
@@ -79,24 +74,24 @@ const SliderBlock = () => {
           direction={"vertical"}
           modules={[Navigation, Scrollbar]}
         >
-          {searchAndFilteredSlides.map((item, index) => {
+          {mostPopularContent.map((item, index) => {
             return (
               <SwiperSlide
                 className="my-slide__item"
                 key={item.id}
               >
-                <h1>{item.title}</h1>
+                <h1>{item.name}</h1>
                 <p>{item.type}</p>
               </SwiperSlide>
             );
           })}
-          {searchAndFilteredSlides.map((item, index) => {
+          {mostPopularContent.map((item, index) => {
             return (
               <SwiperSlide
                 className="my-slide__item"
                 key={item.id}
               >
-                <h1>{item.title}</h1>
+                <h1>{item.name}</h1>
                 <p>{item.type}</p>
               </SwiperSlide>
             );

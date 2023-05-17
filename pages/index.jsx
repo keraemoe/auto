@@ -21,7 +21,7 @@ export default function Home() {
         <script src="https://kit.fontawesome.com/1f5bacc93d.js" crossorigin="anonymous"></script>
       </Head>
       <Hero />
-      {/* <SliderBlock /> */}
+      <SliderBlock />
       <ShowCars />
       <AboutUs />
       <Review />
