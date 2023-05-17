@@ -5,37 +5,41 @@ import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "swiper/react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-// import Captions from "yet-another-react-lightbox/plugins/captions";
-// import Zoom from "yet-another-react-lightbox/plugins/zoom";
-// Import Swiper styles
+
 import "swiper/css";
-// import slide from "../../assets/Merc.png";
-// import slideTwo from "../../assets/Classic.png";
-// import slideThree from "../../assets/Classic2.png";
-// import slideFour from "../../assets/Audi.png";
-import Video from "yet-another-react-lightbox/plugins/video";
+import { Modal } from "antd";
+import ShowCarsCardForModal from "../ShowCarsCardForModal/ShowCarsCardForModal";
+import { motion } from "framer-motion";
 const ReviewCard = () => {
   console.log(CarVideos);
 
   const [open, setOpen] = useState(false);
-  const [animationDuration, setAnimationDuration] = useState(500);
-  const [maxZoomPixelRatio, setMaxZoomPixelRatio] = useState(1);
-  const [zoomInMultiplier, setZoomInMultiplier] = useState(2);
-  const [doubleTapDelay, setDoubleTapDelay] = useState(300);
-  const [doubleClickDelay, setDoubleClickDelay] = useState(300);
-  const [doubleClickMaxStops, setDoubleClickMaxStops] = useState(2);
-  const [keyboardMoveDistance, setKeyboardMoveDistance] = useState(50);
-  const [wheelZoomDistanceFactor, setWheelZoomDistanceFactor] = useState(100);
-  const [pinchZoomDistanceFactor, setPinchZoomDistanceFactor] =
-    React.useState(100);
-  const [scrollToZoom, setScrollToZoom] = React.useState(false);
+  const [carVideos, setCarVideos] = useState(
+    CarVideos.map((item) => ({ ...item, isHovered: false }))
+  );
+
+  const handleMouseEnter = (id) => {
+    const updatedCarVideos = carVideos.map((item) => ({
+      ...item,
+      isHovered: item.id === id ? true : false,
+    }));
+    setCarVideos(updatedCarVideos);
+  };
+
+  const handleMouseLeave = () => {
+    const updatedCarVideos = carVideos.map((item) => ({
+      ...item,
+      isHovered: false,
+    }));
+    setCarVideos(updatedCarVideos);
+  };
 
   return (
     <div className={s.ReviewCard}>
       <Swiper
         speed={2000}
         slidesPerView={4}
-        autoplay={{delay: 1000}}
+        autoplay={{ delay: 1000 }}
         className="myReviewSwiper"
         breakpoints={{
           320: {
@@ -139,21 +143,31 @@ const ReviewCard = () => {
         }}
         modules={[Autoplay]}
       >
-        {CarVideos.map((item) => {
-          return (
-            <SwiperSlide
-              key={item.id}
-              id={item.id}
-              className={s.slide}
-              onClick={() => setOpen(true)}
+       {carVideos.map((item) => (
+        <SwiperSlide
+          key={item.id}
+          id={item.id}
+          className={s.slide}
+          onMouseEnter={() => handleMouseEnter(item.id)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => setOpen(true)}
+        >
+          <img src={item.link} alt="img" />
+          {item.isHovered && (
+            <motion.div className={`${s.overlay} ${item.isHovered ? s.overlayVisible : ''}`}
+            initial="hidden"
+            transition={{ duration: 0.1 }}
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0.1},
+              visible: { scale: 1 },
+            }}
             >
-              <img src={item.link} alt="img" />
-              <div className={s.overlay}>
-                <img src="/play.png" alt="play" />
-              </div>
-            </SwiperSlide>
-          );
-        })}
+              <img src="/play.png" alt="play" />
+            </motion.div>
+          )}
+        </SwiperSlide>
+      ))}
       </Swiper>
 
       {/* <Lightbox
@@ -180,26 +194,26 @@ const ReviewCard = () => {
           scrollToZoom,
         }}
       /> */}
-     <Lightbox
-        plugins={[Video]}
+      <Modal
+        padding="10px"
+        footer={false}
+        centered
         open={open}
-        close={() => setOpen(false)}
-        Keyboard
-        slides={[
-          {
-            type: "video",
-            width: 1920,
-            height: 1080,
-            poster: "../../assets/Merc.png",
-            sources: [
-              {
-                src: "https://player.vimeo.com/external/368320203.sd.mp4?s=38b1bac5d627b94fb902597643461ee5f233d00a&profile_id=164&oauth2_token_id=57447761",
-                type: "video/mp4",
-              },
-            ],
-          },
-        ]}
-      />
+        closable={true}
+        onCancel={() => setOpen(false)}
+        width={1000}
+        className="modalStyle"
+      >
+        {CarVideos.map((item) => {
+          return (
+            <ShowCarsCardForModal
+              key={item.id}
+              img={item.img}
+              title={item.title}
+            />
+          );
+        })}
+      </Modal>
     </div>
   );
 };
