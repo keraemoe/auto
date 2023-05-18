@@ -25,7 +25,7 @@ export default function Home() {
       <ShowCars />
       <AboutUs />
       <Review />
-      {/* <Advantages /> */}
+      <Advantages />
       <AskUsAnything />
       <Discount  />
     </>

@@ -22,7 +22,6 @@ const SliderBlock = () => {
     }
     return index;
   };
-
   
   const initialSlideContent = (id) => {
     const realIndex = getRealIndex(id.realIndex, slidesCount);

@@ -10,6 +10,7 @@ import "swiper/css";
 import { Modal } from "antd";
 import ShowCarsCardForModal from "../ShowCarsCardForModal/ShowCarsCardForModal";
 import { motion } from "framer-motion";
+import VideoCard from "../VideoCard/VideoCard";
 const ReviewCard = () => {
   console.log(CarVideos);
 
@@ -17,6 +18,11 @@ const ReviewCard = () => {
   const [carVideos, setCarVideos] = useState(
     CarVideos.map((item) => ({ ...item, isHovered: false }))
   );
+  const [slideId, setSlideId] = useState(0)
+
+  const changeId = (id) => {
+    setSlideId(id)
+  }
 
   const handleMouseEnter = (id) => {
     const updatedCarVideos = carVideos.map((item) => ({
@@ -130,7 +136,7 @@ const ReviewCard = () => {
           },
           1366: {
             width: 1366,
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1440: {
             width: 1440,
@@ -143,76 +149,46 @@ const ReviewCard = () => {
         }}
         modules={[Autoplay]}
       >
-       {carVideos.map((item) => (
-        <SwiperSlide
-          key={item.id}
-          id={item.id}
-          className={s.slide}
-          onMouseEnter={() => handleMouseEnter(item.id)}
-          onMouseLeave={handleMouseLeave}
-          onClick={() => setOpen(true)}
-        >
-          <img src={item.link} alt="img" />
-          {item.isHovered && (
-            <motion.div className={`${s.overlay} ${item.isHovered ? s.overlayVisible : ''}`}
-            initial="hidden"
-            transition={{ duration: 0.1 }}
-            whileInView="visible"
-            variants={{
-              hidden: { scale: 0.1},
-              visible: { scale: 1 },
-            }}
-            >
-              <img src="/play.png" alt="play" />
-            </motion.div>
-          )}
-        </SwiperSlide>
-      ))}
+        {carVideos.map((item) => (
+          <SwiperSlide
+            key={item.id}
+            id={item.id}
+            onMouseEnter={() => handleMouseEnter(item.id)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => setOpen(true)}
+          >
+            <img src={item.link} alt="img" />
+            {item.isHovered && (
+              <motion.div
+                className={`${s.overlay} ${
+                  item.isHovered ? s.overlayVisible : ""
+                }`}
+                initial="hidden"
+                transition={{ duration: 0.1 }}
+                whileInView="visible"
+                variants={{
+                  hidden: { scale: 0.1 },
+                  visible: { scale: 1 },
+                }}
+                onClick={() => changeId(item.id)}
+              >
+                <img src="/play.png" alt="play" />
+              </motion.div>
+            )}
+          </SwiperSlide>
+        ))}
       </Swiper>
 
-      {/* <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        Keyboard
-        slides={[
-          { src: slide.src },
-          { src: slideTwo.src },
-          { src: slideThree.src },
-          { src: slideFour.src },
-        ]}
-        plugins={[Captions, Zoom]}
-        animation={{ zoom: animationDuration }}
-        zoom={{
-          maxZoomPixelRatio,
-          zoomInMultiplier,
-          doubleTapDelay,
-          doubleClickDelay,
-          doubleClickMaxStops,
-          keyboardMoveDistance,
-          wheelZoomDistanceFactor,
-          pinchZoomDistanceFactor,
-          scrollToZoom,
-        }}
-      /> */}
       <Modal
-        padding="10px"
         footer={false}
         centered
         open={open}
         closable={true}
         onCancel={() => setOpen(false)}
-        width={1000}
+        width={1170}
         className="modalStyle"
       >
-        {CarVideos.map((item) => {
-          return (
-            <ShowCarsCardForModal
-              key={item.id}
-              img={item.img}
-              title={item.title}
-            />
-          );
-        })}
+        <VideoCard CarVideos={CarVideos} slideId={slideId} />
       </Modal>
     </div>
   );

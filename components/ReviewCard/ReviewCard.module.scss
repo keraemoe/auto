@@ -27,6 +27,10 @@
       width: 90px;
       height: 90px;
     }
+    img:hover{
+      transition: 0.8s;
+      filter: brightness(2);
+    }
 
     &.overlayVisible {
       opacity: 1;
