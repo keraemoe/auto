@@ -153,7 +153,6 @@ const ReviewCard = () => {
             slidesPerView: 4,
           },
         }}
-        modules={[Autoplay]}
       >
         {carVideos.map((item) => (
           <SwiperSlide
