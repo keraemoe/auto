@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import s from "./ReviewCard.module.scss";
 import { CarVideos } from "../../constants/constants";
 import { Autoplay } from "swiper";
@@ -18,11 +18,11 @@ const ReviewCard = () => {
   const [carVideos, setCarVideos] = useState(
     CarVideos.map((item) => ({ ...item, isHovered: false }))
   );
-  const [slideId, setSlideId] = useState(0)
+  const [slideId, setSlideId] = useState(0);
 
   const changeId = (id) => {
-    setSlideId(id)
-  }
+    setSlideId(id);
+  };
 
   const handleMouseEnter = (id) => {
     const updatedCarVideos = carVideos.map((item) => ({
@@ -38,6 +38,12 @@ const ReviewCard = () => {
       isHovered: false,
     }));
     setCarVideos(updatedCarVideos);
+  };
+
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const handleImageClick = (video) => {
+    setSelectedVideo(video);
   };
 
   return (
@@ -157,7 +163,7 @@ const ReviewCard = () => {
             onMouseLeave={handleMouseLeave}
             onClick={() => setOpen(true)}
           >
-            <img src={item.link} alt="img" />
+            <video src={item.video} alt="img" />
             {item.isHovered && (
               <motion.div
                 className={`${s.overlay} ${
@@ -170,7 +176,8 @@ const ReviewCard = () => {
                   hidden: { scale: 0.1 },
                   visible: { scale: 1 },
                 }}
-                onClick={() => changeId(item.id)}
+                onClick={() => {changeId(item.id),handleImageClick(item.id)}}
+             
               >
                 <img src="/play.png" alt="play" />
               </motion.div>
@@ -188,7 +195,7 @@ const ReviewCard = () => {
         width={1170}
         className="modalStyle"
       >
-        <VideoCard CarVideos={CarVideos} slideId={slideId} />
+        <VideoCard CarVideos={CarVideos} slideId={slideId}  />
       </Modal>
     </div>
   );
