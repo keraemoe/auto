@@ -148,16 +148,7 @@ const AboutUs = () => {
                   </motion.div>
                 </div>
               </div>
-              <motion.div
-                initial="hidden"
-                transition={{ duration: 0.7 }}
-                whileInView="visible"
-                variants={{
-                  hidden: { scale: 0 },
-                  visible: { scale: 1 },
-                }}
-                className={s.aboutus_section_block_footer}
-              >
+              <div className={s.aboutus_section_block_footer}>
                 <Image
                   className={s.left_quotes}
                   src={leftQuotes}
@@ -179,20 +170,11 @@ const AboutUs = () => {
                   src={rightQuotes}
                   alt="quotes_img"
                 />
-              </motion.div>
+              </div>
             </div>
-            <motion.div
-              initial="hidden"
-              transition={{ duration: 0.7 }}
-              whileInView="visible"
-              variants={{
-                hidden: { scale: 0 },
-                visible: { scale: 1 },
-              }}
-              className={s.aboutus_section_person}
-            >
+            <div className={s.aboutus_section_person}>
               <Image src={manCars} alt="manCars" />
-            </motion.div>
+            </div>
           </>
         )}
       </section>
